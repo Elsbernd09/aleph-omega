@@ -218,3 +218,33 @@ Current capabilities:
 - test the main toy universe components
 
 The implemented universe layer remains a simplified toy model. It is not a complete implementation of topos theory, category theory, modal logic, fuzzy logic, intuitionistic logic, or paraconsistent logic. Its purpose is to make different formal environments computationally visible and comparable.
+
+## Phase 4 Implementation Status
+
+The first working version of the Toy Topos Simulator has now been implemented.
+
+Implemented files:
+
+- src/toy_topoi/statements.py
+- src/toy_topoi/topos_objects.py
+- src/toy_topoi/internal_language.py
+- src/toy_topoi/simulator.py
+- src/toy_topoi/subobject_classifier.py
+- experiments/run_toy_topos_simulator.py
+- tests/test_toy_topos_simulator.py
+
+Current capabilities:
+
+- represent internal mathematical statements
+- assign statement kinds and proof statuses
+- represent topos-inspired objects, morphisms, and diagrams
+- analyze whether a statement fits inside a universe
+- estimate symbol support, missing features, ambiguity, and formalization readiness
+- evaluate statements across multiple toy universes
+- produce cross-universe statement profiles
+- classify statement-universe evaluations with a toy subobject-classifier analogue
+- rank statement-universe fits and ambiguous evaluations
+- run a toy topos simulator experiment
+- test the main toy topos simulator components
+
+This layer remains a simplified computational model. It does not implement full topos theory, categorical semantics, dependent type theory, or machine-checked theorem proving. Its purpose is to make internal truth behavior across toy formal universes visible and testable.

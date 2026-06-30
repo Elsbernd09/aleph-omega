@@ -212,3 +212,35 @@ python3 -m pytest tests/test_toy_topoi.py
 ```
 
 The universe layer can now represent, compare, and report on different formal environments. These models are intentionally simplified and are used for computational exploration rather than full mathematical formalization.
+
+## Phase 4: Toy Topos Simulator
+
+The first working implementation of the Toy Topos Simulator is complete.
+
+Implemented components:
+
+- internal statement model
+- statement kinds and proof statuses
+- statement evaluation model
+- topos-inspired object model
+- topos-inspired morphism model
+- toy diagram model
+- internal language analyzer
+- toy topos simulator
+- toy subobject classifier
+- simulator experiment runner
+- unit tests
+
+Run the toy topos simulator experiment:
+
+```bash
+python3 experiments/run_toy_topos_simulator.py
+```
+
+Run the toy topos simulator tests:
+
+```bash
+python3 -m pytest tests/test_toy_topos_simulator.py
+```
+
+The simulator can now evaluate how internal statements behave across different toy formal universes. It estimates universe fit, ambiguity, proof status, truth value, formalization readiness, and toy subobject-classifier membership. These results are heuristic and educational, not full categorical proofs.

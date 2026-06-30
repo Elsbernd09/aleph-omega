@@ -49,3 +49,22 @@ This experiment:
 - displays toy connective behavior across universes
 
 The comparison scores are heuristic. They are not formal equivalence proofs. They are designed to make structural differences between toy logical universes explicit.
+
+### Toy Topos Simulator
+
+Run:
+
+python3 experiments/run_toy_topos_simulator.py
+
+This experiment:
+
+- loads the standard toy universe library
+- loads starter internal statements
+- evaluates each statement across each universe
+- computes universe-fit, ambiguity, and formalization-readiness scores
+- builds cross-universe statement profiles
+- classifies results using a toy subobject classifier
+- ranks the strongest statement-universe fits
+- ranks the most ambiguous evaluations
+
+The simulator is a simplified computational model. It does not implement full topos theory. Its purpose is to make internal statement behavior across different toy universes inspectable.
