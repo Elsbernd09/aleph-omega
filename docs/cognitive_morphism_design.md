@@ -250,3 +250,35 @@ It studies how informal mathematical insight can become symbolic structure.
 It detects objects, relations, operations, ambiguity, universe compatibility, and Lean skeletons.
 
 This allows Project ℵω to study not only formal systems, but also the transition from human mathematical imagination into formal mathematical language.
+
+## Phase 6 Implementation Status
+
+The first working Cognitive Morphism Layer has now been implemented.
+
+Implemented files:
+
+- src/cognitive_morphism/intuition.py
+- src/cognitive_morphism/morphism.py
+- src/cognitive_morphism/formalizer.py
+- src/cognitive_morphism/gap_analyzer.py
+- experiments/run_cognitive_morphism.py
+- tests/test_cognitive_morphism.py
+
+Current capabilities:
+
+- represent informal mathematical intuitions
+- classify intuition kinds such as analogy, category-structural intuition, contradiction tolerance, modal possibility, and constructive evidence
+- track clarity level and formalization risk
+- estimate conceptual richness and formalization readiness
+- represent cognitive morphisms from intuition to symbolic statement
+- track preserved properties, lost properties, added formal structure, preserved metaphors, and lost metaphors
+- generate starter symbolic statements from informal intuitions
+- infer statement kind, required symbols, free variables, and likely origin universe
+- calculate formalization confidence, meaning drift, and formalization quality
+- analyze the formalization gap between intuition and generated statement
+- calculate review urgency, gap severity, and overall gap index
+- rank formalizations by quality and severity
+- run a cognitive morphism experiment
+- test the cognitive morphism layer
+
+The cognitive morphism layer is a heuristic modeling system. It does not claim to model human cognition, prove mathematical correctness, or automatically produce complete theorem formalizations. Its purpose is to make the informal-to-formal transition visible and reviewable.

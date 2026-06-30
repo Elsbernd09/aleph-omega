@@ -279,3 +279,36 @@ python3 -m pytest tests/test_bridge_translations.py
 The bridge engine can now translate statements between toy formal universes and measure what gets preserved, weakened, distorted, or lost. It currently supports starter bridges such as paraconsistent-to-classical, modal-to-classical, and intuitionistic-to-classical translation. The system computes translation confidence, symbol preservation, feature preservation, semantic severity, and an overall distortion index.
 
 These bridge results are heuristic research diagnostics, not formal categorical equivalences or machine-checked theorem-proving results.
+
+## Phase 6: Cognitive Morphism Layer
+
+The first working implementation of the Cognitive Morphism Layer is complete.
+
+Implemented components:
+
+- intuition object model
+- intuition kind classification
+- clarity and formalization risk scoring
+- cognitive morphism model
+- preservation and loss model
+- informal-to-formal translator
+- formalization draft model
+- formalization gap analyzer
+- cognitive morphism experiment runner
+- unit tests
+
+Run the cognitive morphism experiment:
+
+```bash
+python3 experiments/run_cognitive_morphism.py
+```
+
+Run the cognitive morphism tests:
+
+```bash
+python3 -m pytest tests/test_cognitive_morphism.py
+```
+
+The cognitive morphism layer models the path from informal mathematical intuition to symbolic statement. It tracks what intuitive content is preserved, lost, or changed during formalization. The system computes conceptual richness, formalization readiness, formalization confidence, meaning drift, review urgency, gap severity, and an overall gap index.
+
+These results are heuristic diagnostics. They are not claims about human cognition, automatic theorem proving, or complete formal correctness.

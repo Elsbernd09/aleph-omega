@@ -92,3 +92,25 @@ This experiment:
 - prints bridge-level interpretation summaries
 
 The bridge experiment is a heuristic diagnostic system. It is designed to show how meaning can be preserved, weakened, or lost when statements move between toy universes. It is not a proof of formal equivalence.
+
+### Cognitive Morphism Layer
+
+Run:
+
+```bash
+python3 experiments/run_cognitive_morphism.py
+```
+
+This experiment:
+
+- loads starter informal mathematical intuitions
+- converts each intuition into a starter symbolic statement
+- generates cognitive morphisms from intuition to statement
+- tracks preserved properties, lost properties, added formal structure, preserved metaphors, and lost metaphors
+- estimates formalization confidence and meaning drift
+- analyzes formalization gaps
+- ranks the strongest formalizations
+- ranks the largest formalization gaps
+- identifies drafts requiring human review
+
+The cognitive morphism experiment is a heuristic diagnostic system. It is designed to make the informal-to-formal transition inspectable. It is not automatic theorem proving and not a claim of complete formal correctness.
