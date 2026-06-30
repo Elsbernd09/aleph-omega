@@ -171,3 +171,44 @@ python3 -m pytest tests/test_generative_axioms.py
 ```
 
 The engine can now represent, generate, score, rank, and test experimental axiom candidates.
+
+## Phase 3: Toy Logical Universes
+
+The first working implementation of the Toy Logical Universe layer is complete.
+
+Implemented components:
+
+- truth-value system
+- logic-family definitions
+- consistency policies
+- toy connective algebra
+- formal universe data model
+- universe object and morphism models
+- standard universe library
+- universe comparison engine
+- universe comparison experiment runner
+- unit tests
+
+The project now includes toy versions of:
+
+- classical logic
+- intuitionistic logic
+- paraconsistent logic
+- many-valued logic
+- modal logic
+- symbolic fuzzy logic
+- generated experimental universes
+
+Run the universe comparison experiment:
+
+```bash
+python3 experiments/run_universe_comparison.py
+```
+
+Run the toy universe tests:
+
+```bash
+python3 -m pytest tests/test_toy_topoi.py
+```
+
+The universe layer can now represent, compare, and report on different formal environments. These models are intentionally simplified and are used for computational exploration rather than full mathematical formalization.

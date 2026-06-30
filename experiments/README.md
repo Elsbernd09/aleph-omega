@@ -31,3 +31,21 @@ Future experiments may include:
 - prime geometry simulations
 - cognitive morphism parsing
 - Lean sketch generation
+
+### Toy Logical Universe Comparison
+
+Run:
+
+python3 experiments/run_universe_comparison.py
+
+This experiment:
+
+- loads the standard toy universe library
+- prints a universe inventory
+- compares universes pairwise
+- ranks the most compatible universe transports
+- ranks the most difficult universe transports
+- gives a detailed paraconsistent-to-classical translation example
+- displays toy connective behavior across universes
+
+The comparison scores are heuristic. They are not formal equivalence proofs. They are designed to make structural differences between toy logical universes explicit.
