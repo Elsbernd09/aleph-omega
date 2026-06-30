@@ -156,3 +156,22 @@ This experiment:
 - generates a final intelligence report
 
 The meta-theory experiment evaluates the architecture as a system. It does not prove new mathematics. It identifies strengths, weaknesses, research risks, review priorities, and recommended next actions.
+
+### Unified Research Report + Output Layer
+
+Run:
+
+```bash
+python3 experiments/run_full_project_report.py
+```
+
+This experiment:
+
+- runs the meta-theory system
+- evaluates global system metrics
+- generates an intelligence report
+- exports research artifacts
+- generates a Markdown report
+- saves the report to `reports/project_aleph_omega_report.md`
+
+The reporting experiment organizes the outputs of Project ℵω into a readable research-system report. It does not create mathematical proofs or validate open mathematical claims.

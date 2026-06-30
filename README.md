@@ -374,3 +374,39 @@ python3 -m pytest tests/test_meta_theory.py
 The meta-theory layer evaluates the entire Project ℵω architecture across axiom generation, toy universe simulation, bridge translation, cognitive morphism analysis, and neural-symbolic formalization planning. It produces global system metrics, research risk estimates, strongest and weakest layer rankings, findings, limitations, and recommended next actions.
 
 These results are heuristic system diagnostics, not mathematical proofs or claims of solved open problems.
+
+## Phase 9: Unified Research Report + Output Layer
+
+The first working implementation of the Unified Research Report + Output Layer is complete.
+
+Implemented components:
+
+- research artifact model
+- artifact status, risk, and confidence tracking
+- artifact collections
+- Markdown report generator
+- system summary exporter
+- full project report experiment
+- reporting tests
+
+Run the full project report generator:
+
+```bash
+python3 experiments/run_full_project_report.py
+```
+
+Run the reporting tests:
+
+```bash
+python3 -m pytest tests/test_reporting.py
+```
+
+Generated report:
+
+```text
+reports/project_aleph_omega_report.md
+```
+
+The reporting layer converts Project ℵω outputs into readable research artifacts and Markdown reports. It summarizes system metrics, review requirements, limitations, and recommended next steps.
+
+These reports summarize a computational research framework. They are not mathematical proofs or claims of solved open problems.
