@@ -10,7 +10,7 @@ toy axioms inside the Generative Axiom Engine.
 """
 
 from dataclasses import dataclass
-from typing import Dict, Iterable, List, Set
+from typing import Dict, Iterable, List, Optional, Set
 
 from .axiom import Axiom, AxiomDomain
 
@@ -59,7 +59,7 @@ class AxiomEvaluator:
     candidate assumptions.
     """
 
-    def __init__(self, reference_axioms: Iterable[Axiom] | None = None):
+    def __init__(self, reference_axioms: Optional[Iterable[Axiom]] = None):
         self.reference_axioms = list(reference_axioms or [])
 
     def evaluate(self, axiom: Axiom) -> AxiomScore:
@@ -223,7 +223,7 @@ class AxiomEvaluator:
             + dependency_component
         )
 
-    def stability_score(self, axiom: Axiom, contradiction_risk: float | None = None) -> float:
+    def stability_score(self, axiom: Axiom, contradiction_risk: Optional[float] = None) -> float:
         """
         Estimates whether the axiom is stable enough to use in experiments.
 
