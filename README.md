@@ -1,51 +1,145 @@
 # Project ℵω: Trans-Axiomatic Architectonics
 
-Project ℵω is a computational laboratory for exploring generative axiom systems, toy mathematical universes, logic translation, and neural-symbolic formalization.
+A computational laboratory for generative axiom systems, toy logical universes, bridge translation, and neural-symbolic formalization.
 
-The project is inspired by mathematical logic, category theory, topos theory, type theory, proof assistants, and symbolic artificial intelligence. Its goal is not to claim solutions to major open problems, but to build a serious experimental framework for studying how formal systems can be generated, compared, translated, and partially formalized.
+## Overview
+
+Project ℵω studies formal mathematical systems as computational objects.
+
+Instead of assuming one fixed mathematical background, the project makes the background itself explicit. Axioms, inference rules, truth values, statements, universes, morphisms, and proof sketches are represented as structured objects that can eventually be generated, compared, translated, and analyzed.
+
+The project is inspired by mathematical logic, category theory, topos theory, type theory, proof assistants, and symbolic artificial intelligence.
+
+Its goal is not to claim solutions to open problems. Its goal is to build a serious experimental framework for exploring how formal systems behave.
 
 ## Core Research Question
 
-Can we computationally represent families of formal universes and study the transformations between them?
+Can we computationally model families of formal mathematical universes and study the transformations between them?
 
-More specifically, Project ℵω explores whether axioms, inference rules, truth values, and mathematical statements can be treated as structured computational objects that can be generated, scored, compared, and transported across different logical environments.
+This question leads to several subquestions:
 
-## Main Components
+- How can axioms be represented and scored?
+- How can different logical universes be modeled?
+- How does truth change across formal contexts?
+- What is preserved or distorted when a statement moves between universes?
+- Can informal mathematical intuition be converted into symbolic structure?
+- Can symbolic structures be turned into Lean-style proof sketches?
 
-### 1. Generative Axiom Systems
+## Main Modules
 
-The project will include tools for generating toy axiom systems and scoring them according to structural complexity, expressive power, contradiction risk, novelty, and mathematical interest.
+### 1. Generative Axiom Engine
 
-### 2. Toy Topoi and Logical Universes
+The generative axiom engine represents toy axioms as structured data. It will eventually generate, mutate, recombine, score, and filter candidate axiom systems.
 
-The project will define simplified formal universes with different internal logics, including classical logic, intuitionistic logic, paraconsistent logic, many-valued logic, and modal logic.
+Important scores may include complexity, novelty, contradiction risk, expressivity contribution, and stability.
+
+### 2. Toy Logical Universes
+
+The universe layer models different formal environments, including classical, intuitionistic, paraconsistent, many-valued, modal, fuzzy, and generated toy universes.
+
+Each universe has its own assumptions about truth, contradiction, inference, and interpretation.
 
 ### 3. Bridge and Transport Engine
 
-The project will study how statements change when transported between different logical universes. This module models the idea that a statement may behave differently depending on the surrounding formal system.
+The bridge engine studies how statements behave when moved between universes.
+
+It records preservation, distortion, semantic loss, failure modes, and translation compatibility.
 
 ### 4. Prime Geometry Lab
 
-The project will include experimental representations of prime numbers as geometric and graph-theoretic objects. This is not a proof of any open conjecture, but a research-style computational playground inspired by arithmetic geometry.
+The prime geometry layer will explore experimental representations of prime numbers as graphs, curves, and deformation objects.
+
+This is an exploratory computational module, not a proof of number-theoretic conjectures.
 
 ### 5. Cognitive Morphism Engine
 
-The project will explore how informal mathematical intuition can be translated into structured symbolic statements and early proof-assistant sketches.
+The cognitive morphism engine studies the transition from informal mathematical intuition to structured symbolic statements.
+
+It will detect objects, relations, operations, ambiguity, universe compatibility, and possible Lean theorem skeletons.
 
 ### 6. Lean Experiments
 
-The project will include Lean files for basic formalization experiments involving propositions, proof objects, reflection, and simple theorem sketches.
+The Lean layer will contain formalization experiments involving propositions, proof objects, theorem skeletons, and eventually reflection-style reasoning.
 
-## Philosophy
+Early Lean files may include incomplete proof sketches with sorry. Those sketches are not completed proofs; they are formalization starting points.
 
-Most mathematical software works inside a fixed formal universe. Project ℵω asks what happens when the formal universe itself becomes an object of study.
+## Repository Structure
 
-Instead of only proving statements within one system, this project studies the space of possible systems.
+```text
+aleph-omega/
+├── docs/
+│   ├── research_manifesto.md
+│   ├── formal_system_model.md
+│   ├── universe_design.md
+│   ├── axiom_engine_design.md
+│   ├── bridge_engine_design.md
+│   ├── cognitive_morphism_design.md
+│   └── limitations.md
+├── src/
+│   ├── generative_axioms/
+│   ├── toy_topoi/
+│   ├── bridges/
+│   └── cognitive_morphism/
+├── experiments/
+├── lean/
+├── tests/
+├── requirements.txt
+└── README.md
+```
 
-## Status
+## Current Status
 
-This repository is currently in early development.
+The repository is currently in the architecture and design phase.
 
-## Disclaimer
+Phase 0 created the GitHub repository, documentation structure, Python package skeleton, experiments folder, Lean folder, and tests folder.
 
-This project does not claim to solve the abc conjecture, the Goldbach conjecture, or any other major open mathematical problem. It is an educational and experimental research framework for computational logic, formal systems, and mathematical foundations.
+Phase 1 defines the intellectual architecture of the project through research design documents.
+
+Implementation begins in later phases.
+
+## Documentation
+
+- [Research Manifesto](docs/research_manifesto.md)
+- [Formal System Model](docs/formal_system_model.md)
+- [Universe Design](docs/universe_design.md)
+- [Axiom Engine Design](docs/axiom_engine_design.md)
+- [Bridge Engine Design](docs/bridge_engine_design.md)
+- [Cognitive Morphism Design](docs/cognitive_morphism_design.md)
+- [Limitations and Academic Honesty](docs/limitations.md)
+
+## Design Philosophy
+
+Project ℵω follows one main principle:
+
+Represent the mathematical background itself as an object of computation.
+
+Ordinary mathematical software usually works inside a fixed background. Project ℵω makes that background visible, variable, and analyzable.
+
+A statement is not studied only as true or false. It is studied as true, false, unknown, contradictory, necessary, possible, fuzzy, provable, unprovable, or unstable depending on the universe in which it is interpreted.
+
+## Academic Honesty
+
+Project ℵω does not claim to solve the abc conjecture, the Goldbach conjecture, the Riemann hypothesis, or any other major open problem.
+
+It does not claim to replace ZFC, type theory, Lean, or topos theory.
+
+It does not claim that generated axioms are automatically true or that Lean skeletons are completed proofs.
+
+The project is ambitious because it studies formal systems themselves as computational objects.
+
+It is credible because it distinguishes clearly between inspiration, metaphor, experiment, software architecture, and mathematical proof.
+
+## Long-Term Vision
+
+The long-term vision is an experimental platform that can:
+
+- generate candidate axiom systems
+- build toy logical universes
+- compare truth behavior across universes
+- transport statements between formal contexts
+- measure preservation and distortion
+- produce experiment reports
+- convert informal intuition into symbolic structures
+- generate Lean-style theorem skeletons
+
+In mature form, Project ℵω aims to become a small but serious computational foundations laboratory.
