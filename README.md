@@ -344,3 +344,33 @@ python3 -m pytest tests/test_neural_symbolic_formalization.py
 The neural-symbolic layer connects informal mathematical intuitions to formalization targets, Lean-style proof sketches, proof obligations, and ordered action plans. It separates ambition from proof completion by explicitly marking missing definitions, assumptions, semantic encodings, and unresolved `sorry` placeholders.
 
 These results are formalization roadmaps, not completed machine-checked proofs.
+
+## Phase 8: Meta-Theory / System Intelligence Layer
+
+The first working implementation of the Meta-Theory / System Intelligence Layer is complete.
+
+Implemented components:
+
+- system metrics model
+- system health grading
+- research risk scoring
+- global research evaluator
+- intelligence report generator
+- meta-theory experiment runner
+- unit tests
+
+Run the meta-theory intelligence experiment:
+
+```bash
+python3 experiments/run_meta_theory_report.py
+```
+
+Run the meta-theory tests:
+
+```bash
+python3 -m pytest tests/test_meta_theory.py
+```
+
+The meta-theory layer evaluates the entire Project ℵω architecture across axiom generation, toy universe simulation, bridge translation, cognitive morphism analysis, and neural-symbolic formalization planning. It produces global system metrics, research risk estimates, strongest and weakest layer rankings, findings, limitations, and recommended next actions.
+
+These results are heuristic system diagnostics, not mathematical proofs or claims of solved open problems.

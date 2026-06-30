@@ -135,3 +135,24 @@ This experiment:
 - shows detailed Lean sketch, proof obligation, and plan examples
 
 This experiment produces a roadmap for formalization. It does not prove theorems automatically. Generated sketches may contain `sorry` placeholders, which explicitly mark unfinished proof work.
+
+### Meta-Theory / System Intelligence Layer
+
+Run:
+
+```bash
+python3 experiments/run_meta_theory_report.py
+```
+
+This experiment:
+
+- runs the axiom scoring layer
+- runs toy universe comparison
+- runs toy topos simulation
+- runs bridge translation and distortion analysis
+- runs cognitive morphism formalization and gap analysis
+- runs neural-symbolic formalization planning
+- evaluates global system metrics
+- generates a final intelligence report
+
+The meta-theory experiment evaluates the architecture as a system. It does not prove new mathematics. It identifies strengths, weaknesses, research risks, review priorities, and recommended next actions.
