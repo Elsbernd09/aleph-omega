@@ -244,3 +244,38 @@ python3 -m pytest tests/test_toy_topos_simulator.py
 ```
 
 The simulator can now evaluate how internal statements behave across different toy formal universes. It estimates universe fit, ambiguity, proof status, truth value, formalization readiness, and toy subobject-classifier membership. These results are heuristic and educational, not full categorical proofs.
+
+## Phase 5: Bridge Translation Engine
+
+The first working implementation of the Bridge Translation Engine is complete.
+
+Implemented components:
+
+- translation result model
+- meaning-change model
+- translation status model
+- bridge map model
+- symbol mappings
+- feature mappings
+- truth-value mappings
+- proof-status mappings
+- universe-to-universe translator
+- distortion analyzer
+- bridge translation experiment runner
+- unit tests
+
+Run the bridge translation experiment:
+
+```bash
+python3 experiments/run_bridge_translations.py
+```
+
+Run the bridge tests:
+
+```bash
+python3 -m pytest tests/test_bridge_translations.py
+```
+
+The bridge engine can now translate statements between toy formal universes and measure what gets preserved, weakened, distorted, or lost. It currently supports starter bridges such as paraconsistent-to-classical, modal-to-classical, and intuitionistic-to-classical translation. The system computes translation confidence, symbol preservation, feature preservation, semantic severity, and an overall distortion index.
+
+These bridge results are heuristic research diagnostics, not formal categorical equivalences or machine-checked theorem-proving results.

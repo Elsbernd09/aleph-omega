@@ -68,3 +68,27 @@ This experiment:
 - ranks the most ambiguous evaluations
 
 The simulator is a simplified computational model. It does not implement full topos theory. Its purpose is to make internal statement behavior across different toy universes inspectable.
+
+### Bridge Translation Engine
+
+Run:
+
+```bash
+python3 experiments/run_bridge_translations.py
+```
+
+This experiment:
+
+- loads starter bridge maps
+- loads source and target universes
+- finds statements belonging to each bridge source universe
+- translates statements into target universes
+- tracks preserved symbols, lost symbols, added symbols, preserved features, and lost features
+- tracks truth-value and proof-status changes
+- computes translation confidence
+- generates distortion reports
+- ranks the best translations
+- ranks the most distorted translations
+- prints bridge-level interpretation summaries
+
+The bridge experiment is a heuristic diagnostic system. It is designed to show how meaning can be preserved, weakened, or lost when statements move between toy universes. It is not a proof of formal equivalence.
