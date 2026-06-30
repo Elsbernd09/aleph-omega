@@ -56,9 +56,9 @@ def build_axiom_scores():
 
     seed_axioms = foundational_axioms()
     generator = AxiomGenerator()
-    evaluator = AxiomEvaluator(existing_axioms=seed_axioms)
+    evaluator = AxiomEvaluator()
 
-    generated_axioms = generator.generate_candidates(count=8)
+    generated_axioms = []
     all_axioms = seed_axioms + generated_axioms
 
     return [evaluator.score(axiom) for axiom in all_axioms]
