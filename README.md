@@ -143,3 +143,31 @@ The long-term vision is an experimental platform that can:
 - generate Lean-style theorem skeletons
 
 In mature form, Project ℵω aims to become a small but serious computational foundations laboratory.
+
+## Phase 2: Generative Axiom Engine
+
+The first working implementation of the Generative Axiom Engine is complete.
+
+Implemented components:
+
+- `Axiom` data model
+- starter axiom library
+- heuristic axiom evaluator
+- template-based axiom generator
+- axiom mutation system
+- experiment runner
+- unit tests
+
+Run the experiment:
+
+```bash
+python3 experiments/run_axiom_engine.py
+```
+
+Run the tests:
+
+```bash
+python3 -m pytest tests/test_generative_axioms.py
+```
+
+The engine can now represent, generate, score, rank, and test experimental axiom candidates.

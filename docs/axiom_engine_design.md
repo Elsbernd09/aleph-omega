@@ -262,3 +262,38 @@ It should make formal assumptions explorable, not pretend to manufacture final m
 The Generative Axiom Engine is one of the central components of Project ℵω.
 
 It turns axioms into computational objects. It allows axiom systems to be generated, scored, compared, filtered, and studied across different formal universes.
+
+## Phase 2 Implementation Status
+
+The first working version of the Generative Axiom Engine has now been implemented.
+
+Implemented files:
+
+- src/generative_axioms/axiom.py
+- src/generative_axioms/library.py
+- src/generative_axioms/evaluator.py
+- src/generative_axioms/generator.py
+- experiments/run_axiom_engine.py
+- tests/test_generative_axioms.py
+
+Current capabilities:
+
+- represent axioms as structured Python objects
+- load a hand-designed starter axiom library
+- generate new candidate axioms from controlled templates
+- mutate seed axioms into nearby candidate assumptions
+- score axioms using heuristic metrics
+- rank axioms by overall research interest
+- run an experiment that prints a ranked axiom table
+- test the main generative axiom engine components
+
+The implemented evaluator currently scores:
+
+- complexity
+- novelty
+- contradiction risk
+- expressivity
+- stability
+- overall interest
+
+These scores remain heuristic research instruments. They are useful for comparison and filtering, but they are not mathematical proofs.
