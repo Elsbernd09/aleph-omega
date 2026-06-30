@@ -282,3 +282,35 @@ Current capabilities:
 - test the cognitive morphism layer
 
 The cognitive morphism layer is a heuristic modeling system. It does not claim to model human cognition, prove mathematical correctness, or automatically produce complete theorem formalizations. Its purpose is to make the informal-to-formal transition visible and reviewable.
+
+## Phase 7 Implementation Status
+
+The first working Neural-Symbolic Formalization Layer has now been implemented.
+
+Implemented files:
+
+- src/cognitive_morphism/formalization_target.py
+- src/cognitive_morphism/lean_sketch.py
+- src/cognitive_morphism/proof_obligation.py
+- src/cognitive_morphism/formalization_planner.py
+- experiments/run_neural_symbolic_formalization.py
+- tests/test_neural_symbolic_formalization.py
+
+Current capabilities:
+
+- build formalization targets from generated statements
+- classify formal targets as definitions, axioms, theorems, lemmas, structures, examples, or commentary sketches
+- estimate formalization difficulty and readiness
+- infer required definitions, assumptions, and Lean-style imports
+- generate conservative Lean-style proof sketches
+- include explicit warnings for unfinished `sorry` placeholders
+- identify missing definitions, missing assumptions, semantic encoding requirements, and unresolved proof placeholders
+- produce proof-obligation reports
+- calculate proof burden and obligation indexes
+- create ordered formalization plans
+- recommend next formalization actions
+- rank plans by burden and readiness
+- run a full neural-symbolic formalization experiment
+- test the full Phase 7 pipeline
+
+This layer is intentionally honest about proof status. It does not claim that generated sketches are completed proofs. Any generated Lean-style theorem with `sorry` is unfinished. The purpose is to create a structured roadmap from informal intuition to formalization target, proof sketch, proof obligations, and next actions.

@@ -312,3 +312,35 @@ python3 -m pytest tests/test_cognitive_morphism.py
 The cognitive morphism layer models the path from informal mathematical intuition to symbolic statement. It tracks what intuitive content is preserved, lost, or changed during formalization. The system computes conceptual richness, formalization readiness, formalization confidence, meaning drift, review urgency, gap severity, and an overall gap index.
 
 These results are heuristic diagnostics. They are not claims about human cognition, automatic theorem proving, or complete formal correctness.
+
+## Phase 7: Neural-Symbolic Formalization Layer
+
+The first working implementation of the Neural-Symbolic Formalization Layer is complete.
+
+Implemented components:
+
+- formalization target model
+- formal target classification
+- formalization difficulty and readiness scoring
+- Lean-style sketch generator
+- proof obligation model
+- proof obligation analyzer
+- formalization planner
+- neural-symbolic experiment runner
+- unit tests
+
+Run the neural-symbolic formalization experiment:
+
+```bash
+python3 experiments/run_neural_symbolic_formalization.py
+```
+
+Run the neural-symbolic tests:
+
+```bash
+python3 -m pytest tests/test_neural_symbolic_formalization.py
+```
+
+The neural-symbolic layer connects informal mathematical intuitions to formalization targets, Lean-style proof sketches, proof obligations, and ordered action plans. It separates ambition from proof completion by explicitly marking missing definitions, assumptions, semantic encodings, and unresolved `sorry` placeholders.
+
+These results are formalization roadmaps, not completed machine-checked proofs.

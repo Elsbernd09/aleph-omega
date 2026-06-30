@@ -114,3 +114,24 @@ This experiment:
 - identifies drafts requiring human review
 
 The cognitive morphism experiment is a heuristic diagnostic system. It is designed to make the informal-to-formal transition inspectable. It is not automatic theorem proving and not a claim of complete formal correctness.
+
+### Neural-Symbolic Formalization Layer
+
+Run:
+
+```bash
+python3 experiments/run_neural_symbolic_formalization.py
+```
+
+This experiment:
+
+- loads starter mathematical intuitions
+- formalizes them into symbolic statements
+- builds formalization targets
+- generates Lean-style sketches
+- identifies proof obligations
+- ranks proof burdens and readiness levels
+- creates ordered formalization plans
+- shows detailed Lean sketch, proof obligation, and plan examples
+
+This experiment produces a roadmap for formalization. It does not prove theorems automatically. Generated sketches may contain `sorry` placeholders, which explicitly mark unfinished proof work.
