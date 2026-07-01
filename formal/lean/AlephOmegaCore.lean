@@ -790,3 +790,102 @@ theorem quotient_category_associativity
     exact quotient_associativity F G H
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 23B: Standalone quotient category API.
+
+This section packages the quotient-category core into clean names.
+
+The goal is not yet to instantiate Mathlib's Category typeclass.
+The goal is to expose a standalone category-like API for quotient morphisms.
+-/
+
+/--
+Quotient hom-type API name.
+
+A quotient hom from A to B is a quotient morphism from A to B.
+-/
+abbrev QuotientHom
+  (A B : FormalSystem) : Type :=
+  QuotientMorphism A B
+
+/--
+Identity arrow in the standalone quotient category API.
+-/
+def quotientId
+  (A : FormalSystem) : QuotientHom A A :=
+  quotientIdentity A
+
+/--
+Composition in the standalone quotient category API.
+
+The order is quotientComp F G = G after F.
+-/
+def quotientComp
+  {A B C : FormalSystem}
+  (F : QuotientHom A B)
+  (G : QuotientHom B C) :
+  QuotientHom A C :=
+  quotientCompose F G
+
+/--
+Standalone quotient category left identity law.
+-/
+theorem quotient_api_left_identity
+  {A B : FormalSystem}
+  (F : QuotientHom A B) :
+  quotientComp (quotientId A) F = F := by
+    exact quotient_category_left_identity F
+
+/--
+Standalone quotient category right identity law.
+-/
+theorem quotient_api_right_identity
+  {A B : FormalSystem}
+  (F : QuotientHom A B) :
+  quotientComp F (quotientId B) = F := by
+    exact quotient_category_right_identity F
+
+/--
+Standalone quotient category associativity law.
+-/
+theorem quotient_api_associativity
+  {A B C D : FormalSystem}
+  (F : QuotientHom A B)
+  (G : QuotientHom B C)
+  (H : QuotientHom C D) :
+  quotientComp (quotientComp F G) H =
+  quotientComp F (quotientComp G H) := by
+    exact quotient_category_associativity F G H
+
+/--
+Every preservation morphism determines a quotient hom.
+-/
+def quotientHomOf
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B) :
+  QuotientHom A B :=
+  quotientOf F
+
+/--
+Equivalent preservation morphisms determine the same quotient hom.
+-/
+theorem quotient_hom_ext
+  {A B : FormalSystem}
+  {F G : PreservationMorphism A B} :
+  MorphismEquivalent F G ->
+  quotientHomOf F = quotientHomOf G := by
+    intro h
+    exact equivalent_morphisms_same_quotient h
+
+/--
+The quotient identity API agrees with the quotient of the identity morphism.
+-/
+theorem quotient_id_is_identity_class
+  (A : FormalSystem) :
+  quotientId A = quotientHomOf (identityMorphism A) := by
+    rfl
+
+end AlephOmega
