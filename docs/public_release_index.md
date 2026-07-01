@@ -138,3 +138,13 @@ Then run:
 The public release should describe Project Aleph-Omega as a finite institution-inspired, Lean-supported research framework.
 
 It should not describe the project as a universal theory of institutions, a solved open problem, a full Mathlib Category instance, or a field-changing theorem.
+
+## Verification Status Page
+
+The public verification status page is available at:
+
+```text
+docs/verification_status.md
+```
+
+It explains what is Lean-checked, Python-tested, CI-checked, and explicitly not claimed.

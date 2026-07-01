@@ -273,3 +273,13 @@ The fastest complete verification command is:
 ```bash
 ./scripts/check_formal_stack.sh
 ```
+
+## Verification Status
+
+A reviewer-facing verification status page is available at:
+
+```text
+docs/verification_status.md
+```
+
+It separates Lean-checked results, Python-tested computational results, CI-checked infrastructure, and explicit non-claims.
