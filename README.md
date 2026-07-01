@@ -544,3 +544,17 @@ docs/lean_export_completion_report.md
 Careful claim:
 
 > Project ℵω now has a Python-to-Lean export pipeline that generates finite Lean formal systems and finite satisfaction-preserving morphisms from Python data, then verifies the generated Lean artifacts inside the formal-stack gate.
+
+### Phase 32A: Mathlib Export Integration Blueprint
+
+Project ℵω now begins the track for moving Python-generated Lean artifacts into the experimental Mathlib category-theory project.
+
+Artifact:
+
+```text
+docs/mathlib_export_integration_blueprint.md
+```
+
+Careful claim:
+
+> Project ℵω now has a precise plan for moving Python-generated Lean artifacts into its experimental Mathlib category-theory track.
