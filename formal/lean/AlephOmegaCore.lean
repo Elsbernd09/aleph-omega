@@ -978,3 +978,152 @@ theorem quotient_category_comp_is_quotient_comp
     rfl
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 25A: Concrete two-model / two-sentence finite system.
+
+This phase moves closer to the Python finite-universe layer by defining a
+small finite formal system directly in Lean.
+
+The system has:
+
+- two models: m0 and m1
+- two sentences: p and q
+- satisfaction relation:
+    m0 satisfies p
+    m1 satisfies q
+    no other satisfaction judgements hold
+-/
+
+inductive TwoModel where
+  | m0
+  | m1
+deriving DecidableEq
+
+inductive TwoSentence where
+  | p
+  | q
+deriving DecidableEq
+
+/--
+A concrete finite system with two models and two sentences.
+-/
+def TwoSystem : FormalSystem where
+  Model := TwoModel
+  Sentence := TwoSentence
+  Sat := fun m φ =>
+    match m, φ with
+    | TwoModel.m0, TwoSentence.p => True
+    | TwoModel.m1, TwoSentence.q => True
+    | _, _ => False
+
+/--
+m0 satisfies p.
+-/
+theorem two_m0_satisfies_p :
+  TwoSystem.Sat TwoModel.m0 TwoSentence.p := by
+    trivial
+
+/--
+m1 satisfies q.
+-/
+theorem two_m1_satisfies_q :
+  TwoSystem.Sat TwoModel.m1 TwoSentence.q := by
+    trivial
+
+/--
+m0 does not satisfy q.
+-/
+theorem two_m0_not_satisfy_q :
+  ¬ TwoSystem.Sat TwoModel.m0 TwoSentence.q := by
+    intro h
+    cases h
+
+/--
+m1 does not satisfy p.
+-/
+theorem two_m1_not_satisfy_p :
+  ¬ TwoSystem.Sat TwoModel.m1 TwoSentence.p := by
+    intro h
+    cases h
+
+/--
+The identity morphism on TwoSystem preserves satisfaction.
+-/
+theorem two_identity_preserves :
+  ∀ (m : TwoSystem.Model) (φ : TwoSystem.Sentence),
+    TwoSystem.Sat m φ ->
+    TwoSystem.Sat
+      ((identityMorphism TwoSystem).mapModel m)
+      ((identityMorphism TwoSystem).translate φ) := by
+        intro m φ h
+        exact identity_preserves_satisfaction TwoSystem m φ h
+
+/--
+The identity morphism composed with itself on TwoSystem preserves satisfaction.
+-/
+theorem two_identity_composition_preserves :
+  ∀ (m : TwoSystem.Model) (φ : TwoSystem.Sentence),
+    TwoSystem.Sat m φ ->
+    TwoSystem.Sat
+      ((composeMorphism (identityMorphism TwoSystem) (identityMorphism TwoSystem)).mapModel m)
+      ((composeMorphism (identityMorphism TwoSystem) (identityMorphism TwoSystem)).translate φ) := by
+        intro m φ h
+        exact
+          composition_preserves_satisfaction
+            (identityMorphism TwoSystem)
+            (identityMorphism TwoSystem)
+            m
+            φ
+            h
+
+/--
+A bad sentence translation that swaps p and q.
+-/
+def twoSwapSentence : TwoSystem.Sentence -> TwoSystem.Sentence :=
+  fun φ =>
+    match φ with
+    | TwoSentence.p => TwoSentence.q
+    | TwoSentence.q => TwoSentence.p
+
+/--
+A model map that keeps models fixed.
+-/
+def twoIdentityModel : TwoSystem.Model -> TwoSystem.Model :=
+  fun m => m
+
+/--
+The swap translation does not preserve satisfaction.
+
+m0 satisfies p, but m0 does not satisfy swap(p) = q.
+-/
+theorem two_swap_translation_failure :
+  TwoSystem.Sat TwoModel.m0 TwoSentence.p ∧
+  ¬ TwoSystem.Sat (twoIdentityModel TwoModel.m0) (twoSwapSentence TwoSentence.p) := by
+    constructor
+    · trivial
+    · intro h
+      cases h
+
+/--
+The swap translation is not satisfaction-preserving.
+-/
+theorem two_swap_translation_not_preserving :
+  ¬ (
+    ∀ (m : TwoSystem.Model) (φ : TwoSystem.Sentence),
+      TwoSystem.Sat m φ ->
+      TwoSystem.Sat (twoIdentityModel m) (twoSwapSentence φ)
+  ) := by
+    intro h
+    have sourceSat : TwoSystem.Sat TwoModel.m0 TwoSentence.p := by
+      trivial
+    have targetSat :
+      TwoSystem.Sat
+        (twoIdentityModel TwoModel.m0)
+        (twoSwapSentence TwoSentence.p) :=
+      h TwoModel.m0 TwoSentence.p sourceSat
+    cases targetSat
+
+end AlephOmega

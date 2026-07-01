@@ -207,3 +207,21 @@ Strongest careful claim:
 Limitation:
 
 > The Python implementation is not fully machine-verified by Lean.
+
+## Phase 25A Update: Concrete Finite System in Lean
+
+Project Aleph-Omega now includes a concrete two-model / two-sentence finite formal system directly inside Lean.
+
+New Lean artifacts:
+
+- `TwoModel`
+- `TwoSentence`
+- `TwoSystem`
+- `two_identity_preserves`
+- `two_identity_composition_preserves`
+- `two_swap_translation_failure`
+- `two_swap_translation_not_preserving`
+
+Careful claim:
+
+> Project Aleph-Omega now contains a Lean-checked concrete finite system with positive preservation theorems and a negative preservation failure boundary.
