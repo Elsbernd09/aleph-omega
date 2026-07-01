@@ -653,3 +653,37 @@ Read the Phase 17 docs:
 Careful claim:
 
 > Project ℵω is a finite computational mathematics framework for studying semantic preservation and distortion across generated finite bridge systems, with theorem-like claims recorded, tested, audited, and bounded by explicit limitations.
+
+## Phase 18: Repository Quality / Reviewer Readiness
+
+Project ℵω now includes reviewer-readiness infrastructure.
+
+This layer adds:
+
+- project health check
+- artifact index generation
+- reviewer quickstart
+- repository checklist
+
+Run reviewer-readiness tools:
+
+python3 -m src.rigor.project_health
+python3 -m src.rigor.artifact_index
+python3 -m src.rigor.reviewer_quickstart
+python3 -m src.rigor.repository_checklist
+
+Run Phase 18 tests:
+
+python3 -m pytest tests/test_rigor_project_health.py tests/test_rigor_artifact_index.py tests/test_rigor_reviewer_quickstart.py tests/test_rigor_repository_checklist.py
+
+Read the Phase 18 docs:
+
+- `docs/reviewer_readiness.md`
+- `docs/project_health.md`
+- `docs/artifact_index.md`
+- `docs/reviewer_quickstart.md`
+- `docs/repository_checklist.md`
+
+Careful claim:
+
+> Project ℵω includes reviewer-readiness tools that improve repository completeness, navigation, and reviewability.

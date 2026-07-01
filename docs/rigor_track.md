@@ -280,3 +280,38 @@ The careful claim is:
 > Project Aleph-Omega is a finite computational mathematics framework for studying semantic preservation and distortion across generated finite bridge systems, with theorem-like claims recorded, tested, audited, and bounded by explicit limitations.
 
 This does not claim universal results about all logics, categories, topoi, or model theories.
+
+## Phase 18: Repository Quality / Reviewer Readiness
+
+Phase 18 adds reviewer-readiness infrastructure to the rigor track.
+
+Implemented files:
+
+- `src/rigor/project_health.py`
+- `src/rigor/artifact_index.py`
+- `src/rigor/reviewer_quickstart.py`
+- `src/rigor/repository_checklist.py`
+- `tests/test_rigor_project_health.py`
+- `tests/test_rigor_artifact_index.py`
+- `tests/test_rigor_reviewer_quickstart.py`
+- `tests/test_rigor_repository_checklist.py`
+- `docs/project_health.md`
+- `docs/artifact_index.md`
+- `docs/reviewer_quickstart.md`
+- `docs/repository_checklist.md`
+- `docs/reviewer_readiness.md`
+
+Phase 18 improves repository quality and reviewer readiness.
+
+It adds:
+
+- project health checks
+- artifact index generation
+- reviewer quickstart generation
+- repository checklist generation
+
+The careful claim is:
+
+> The reviewer-readiness layer improves repository completeness, navigation, and reviewability.
+
+This layer does not verify mathematical truth; it checks project organization and artifact availability.
