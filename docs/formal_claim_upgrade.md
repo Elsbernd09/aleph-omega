@@ -274,3 +274,29 @@ New Lean artifacts:
 Careful claim:
 
 > Project Aleph-Omega now contains a Lean-checked concrete finite preservation chain integrated into the standalone quotient category structure.
+
+## Phase 25 Completion: Concrete Finite Structures in Lean
+
+Phase 25 moves concrete finite systems directly into the Lean formalization.
+
+New report:
+
+- `docs/concrete_lean_completion_report.md`
+
+Completed Lean artifacts include:
+
+- `TwoSystem`
+- `RenamedTwoSystem`
+- `ThirdTwoSystem`
+- nontrivial preservation morphisms
+- nontrivial preservation chain
+- concrete quotient homs
+- quotient-category integration of the concrete chain
+
+Strongest careful claim:
+
+> Project Aleph-Omega contains a Lean-checked concrete finite preservation pipeline across three explicit formal systems, including nontrivial preservation morphisms, a nontrivial composition chain, and integration of that chain into the standalone quotient-category structure.
+
+Limitation:
+
+> The concrete Lean systems are still small finite examples, not general results about all institutions or all logics.

@@ -844,3 +844,25 @@ Strongest careful claim:
 Limitation:
 
 > The Python implementation is not fully machine-verified by Lean.
+
+## Phase 25: Concrete Finite Structures in Lean
+
+Project ℵω now includes concrete finite formal systems directly inside the Lean formalization.
+
+New report:
+
+- `docs/concrete_lean_completion_report.md`
+
+Lean concrete systems:
+
+- `TwoSystem`
+- `RenamedTwoSystem`
+- `ThirdTwoSystem`
+
+Strongest careful claim:
+
+> Project ℵω contains a Lean-checked concrete finite preservation pipeline across three explicit formal systems, including nontrivial preservation morphisms, a nontrivial composition chain, and integration of that chain into the standalone quotient-category structure.
+
+Limitation:
+
+> These are small finite examples, not universal results about all institutions or all logics.
