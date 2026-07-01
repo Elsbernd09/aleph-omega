@@ -1,1 +1,2 @@
 import AlephOmegaMathlib.CategorySmokeTest
+import AlephOmegaMathlib.FormalSystemCategory

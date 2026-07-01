@@ -335,3 +335,17 @@ formal/aleph_omega_mathlib/AlephOmegaMathlib/CategorySmokeTest.lean
 Careful claim:
 
 > Project ℵω can now define and build a real Mathlib `Category` instance in its experimental Mathlib scaffold. This is not yet the Aleph-Omega quotient category instance.
+
+### Phase 29D: Mathlib Formal System Category
+
+Project ℵω now includes an experimental Mathlib `Category` instance for formal systems and satisfaction-preserving morphisms.
+
+Artifact:
+
+```text
+formal/aleph_omega_mathlib/AlephOmegaMathlib/FormalSystemCategory.lean
+```
+
+Careful claim:
+
+> Project ℵω now has a real Mathlib category instance for the direct preservation-morphism structure. This is not yet the quotient category instance.
