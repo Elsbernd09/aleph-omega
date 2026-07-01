@@ -629,3 +629,89 @@ theorem quotient_identity_def
     rfl
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 22E: Quotient composition well-definedness.
+
+A quotient category needs composition to be independent of representative choice.
+
+This theorem says:
+
+If F is equivalent to F' and G is equivalent to G',
+then the quotient class of G after F is the same as the quotient class of
+G' after F'.
+
+This is the core well-definedness theorem for quotient composition.
+-/
+
+/--
+Quotient composition is well-defined with respect to morphism equivalence.
+-/
+theorem quotient_composition_well_defined
+  {A B C : FormalSystem}
+  {F F' : PreservationMorphism A B}
+  {G G' : PreservationMorphism B C} :
+  MorphismEquivalent F F' ->
+  MorphismEquivalent G G' ->
+  quotientOf (composeMorphism F G) = quotientOf (composeMorphism F' G') := by
+    intro hF hG
+    exact equivalent_morphisms_same_quotient
+      (compose_respects_morphism_equivalence hF hG)
+
+/--
+Left representative change does not change the quotient composite.
+-/
+theorem quotient_left_representative_change
+  {A B C : FormalSystem}
+  {F F' : PreservationMorphism A B}
+  (G : PreservationMorphism B C) :
+  MorphismEquivalent F F' ->
+  quotientOf (composeMorphism F G) = quotientOf (composeMorphism F' G) := by
+    intro hF
+    exact quotient_composition_well_defined hF (morphism_equiv_refl G)
+
+/--
+Right representative change does not change the quotient composite.
+-/
+theorem quotient_right_representative_change
+  {A B C : FormalSystem}
+  (F : PreservationMorphism A B)
+  {G G' : PreservationMorphism B C} :
+  MorphismEquivalent G G' ->
+  quotientOf (composeMorphism F G) = quotientOf (composeMorphism F G') := by
+    intro hG
+    exact quotient_composition_well_defined (morphism_equiv_refl F) hG
+
+/--
+The quotient class of identity composed on the left is the quotient class of F.
+-/
+theorem quotient_left_identity
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B) :
+  quotientOf (composeMorphism (identityMorphism A) F) = quotientOf F := by
+    exact equivalent_morphisms_same_quotient (left_identity_equivalent F)
+
+/--
+The quotient class of identity composed on the right is the quotient class of F.
+-/
+theorem quotient_right_identity
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B) :
+  quotientOf (composeMorphism F (identityMorphism B)) = quotientOf F := by
+    exact equivalent_morphisms_same_quotient (right_identity_equivalent F)
+
+/--
+Associativity holds at the quotient-class level.
+-/
+theorem quotient_associativity
+  {A B C D : FormalSystem}
+  (F : PreservationMorphism A B)
+  (G : PreservationMorphism B C)
+  (H : PreservationMorphism C D) :
+  quotientOf (composeMorphism (composeMorphism F G) H) =
+  quotientOf (composeMorphism F (composeMorphism G H)) := by
+    exact equivalent_morphisms_same_quotient (associativity_equivalent F G H)
+
+end AlephOmega
