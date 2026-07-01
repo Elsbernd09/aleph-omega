@@ -201,3 +201,78 @@ theorem associativity_preserves_satisfaction
       exact (composeMorphism (composeMorphism F G) H).preserves m φ h
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Concrete finite example.
+
+This gives the abstract formal system an actual small finite model.
+
+Models are Bool.
+Sentences are Bool.
+Satisfaction means equality.
+-/
+
+def BoolSystem : FormalSystem where
+  Model := Bool
+  Sentence := Bool
+  Sat := fun m φ => m = φ
+
+/--
+A concrete satisfaction example.
+
+The model true satisfies the sentence true.
+-/
+theorem bool_true_satisfies_true :
+  BoolSystem.Sat true true := by
+    rfl
+
+/--
+A concrete non-satisfaction example.
+
+The model true does not satisfy the sentence false.
+-/
+theorem bool_true_not_satisfy_false :
+  ¬ BoolSystem.Sat true false := by
+    intro h
+    cases h
+
+/--
+The identity morphism on the BoolSystem preserves satisfaction.
+-/
+theorem bool_identity_preserves :
+  ∀ (m : BoolSystem.Model) (φ : BoolSystem.Sentence),
+    BoolSystem.Sat m φ ->
+    BoolSystem.Sat
+      ((identityMorphism BoolSystem).mapModel m)
+      ((identityMorphism BoolSystem).translate φ) := by
+        intro m φ h
+        exact identity_preserves_satisfaction BoolSystem m φ h
+
+/--
+The identity morphism composed with itself on BoolSystem preserves satisfaction.
+-/
+theorem bool_identity_composition_preserves :
+  ∀ (m : BoolSystem.Model) (φ : BoolSystem.Sentence),
+    BoolSystem.Sat m φ ->
+    BoolSystem.Sat
+      ((composeMorphism (identityMorphism BoolSystem) (identityMorphism BoolSystem)).mapModel m)
+      ((composeMorphism (identityMorphism BoolSystem) (identityMorphism BoolSystem)).translate φ) := by
+        intro m φ h
+        exact
+          composition_preserves_satisfaction
+            (identityMorphism BoolSystem)
+            (identityMorphism BoolSystem)
+            m
+            φ
+            h
+
+/--
+A concrete check that the composed identity map sends true to true.
+-/
+theorem bool_identity_composition_true :
+  ((composeMorphism (identityMorphism BoolSystem) (identityMorphism BoolSystem)).translate true) = true := by
+    rfl
+
+end AlephOmega
