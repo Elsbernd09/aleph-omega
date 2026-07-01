@@ -496,3 +496,33 @@ Read the category docs:
 - `docs/category_examples.md`
 
 The major conceptual point is that structural validity and semantic preservation are separate. A bridge can obey identity and associativity while still distorting semantic content.
+
+## Phase 13: Functorial Semantics / Preservation Upgrade
+
+Project ℵω now connects finite category-like bridge structure with satisfaction-based semantics.
+
+This layer adds:
+
+- semantic transport along bridges
+- preservation under bridge composition
+- composition preservation theorem
+- distortion accumulation analysis
+- functorial semantics examples
+
+Main theorem:
+
+> If `F` preserves satisfaction and `G` preserves satisfaction, then `G ∘ F` preserves satisfaction.
+
+Run Phase 13 tests:
+
+```bash
+python3 -m pytest tests/test_rigor_semantic_transport.py tests/test_rigor_composition_preservation.py tests/test_rigor_composition_preservation_theorem.py tests/test_rigor_distortion_accumulation.py tests/test_rigor_functorial_examples.py
+```
+
+Read the Phase 13 docs:
+
+- `docs/functorial_semantics.md`
+- `docs/composition_preservation_theorem.md`
+- `docs/functorial_semantics_examples.md`
+
+This phase strengthens the project by showing that satisfaction-preserving bridge morphisms compose, while non-preserving bridges can create measurable distortion accumulation.

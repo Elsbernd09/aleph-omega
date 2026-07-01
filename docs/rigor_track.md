@@ -117,3 +117,31 @@ The key structural result is that finite bridges support identity-law and associ
 The key conceptual distinction is:
 
 > A bridge may be structurally valid while still being semantically lossy.
+
+## Phase 13: Functorial Semantics / Preservation Upgrade
+
+Phase 13 connects the category-like structure from Phase 12 with the satisfaction semantics from Phase 11.
+
+Implemented files:
+
+- `src/rigor/semantic_transport.py`
+- `src/rigor/composition_preservation.py`
+- `src/rigor/composition_preservation_theorem.py`
+- `src/rigor/distortion_accumulation.py`
+- `src/rigor/functorial_examples.py`
+- `tests/test_rigor_semantic_transport.py`
+- `tests/test_rigor_composition_preservation.py`
+- `tests/test_rigor_composition_preservation_theorem.py`
+- `tests/test_rigor_distortion_accumulation.py`
+- `tests/test_rigor_functorial_examples.py`
+- `docs/functorial_semantics.md`
+- `docs/composition_preservation_theorem.md`
+- `docs/functorial_semantics_examples.md`
+
+The main theorem is the Finite Composition Preservation Theorem:
+
+> If `F` preserves satisfaction and `G` preserves satisfaction, then `G ∘ F` preserves satisfaction.
+
+The main conceptual point is:
+
+> Categorical structure tracks composability. Semantic preservation tracks meaning.
