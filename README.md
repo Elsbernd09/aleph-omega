@@ -812,3 +812,19 @@ Strongest careful claim:
 Limitation:
 
 > This is not yet a Mathlib Category instance.
+
+## Phase 24: Lean/Python Correspondence Layer
+
+Project ℵω now includes a formal correspondence manifest connecting Python implementation artifacts to Lean definitions and theorems.
+
+New artifact:
+
+- `docs/formal_correspondence_manifest.md`
+
+Careful claim:
+
+> Project ℵω contains a Python implementation of finite semantic systems and a Lean-checked abstract formal core. The correspondence manifest identifies which computational concepts correspond to which Lean definitions and theorems.
+
+Limitation:
+
+> The Python implementation is not fully machine-verified.

@@ -164,3 +164,19 @@ Strongest careful claim:
 Limitation:
 
 > This is still not a Mathlib Category instance.
+
+## Phase 24 Claim Upgrade: Lean/Python Correspondence
+
+Phase 24 begins the correspondence layer between the Python computational implementation and the Lean formal core.
+
+New artifact:
+
+- `docs/formal_correspondence_manifest.md`
+
+Purpose:
+
+> The manifest identifies which Python artifacts correspond to which Lean definitions and theorems, while clearly separating machine-checked claims from implementation-level claims.
+
+Important limitation:
+
+> The Python implementation is not fully machine-verified. The Lean formalization proves the abstract mathematical core, and the correspondence manifest documents the relationship.
