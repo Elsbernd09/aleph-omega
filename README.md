@@ -259,3 +259,17 @@ docs/public_release_index.md
 ```
 
 This index tells readers where to start, which documents contain the exact claims, and how to verify the formal stack.
+
+## Quickstart
+
+A reviewer-facing setup and verification guide is available at:
+
+```text
+docs/quickstart.md
+```
+
+The fastest complete verification command is:
+
+```bash
+./scripts/check_formal_stack.sh
+```
