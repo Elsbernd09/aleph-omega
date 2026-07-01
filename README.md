@@ -530,3 +530,17 @@ tests/test_rigor_formal_stack_generated_exports.py
 Careful claim:
 
 > Project ℵω now includes reproducible Python-generated Lean exports as part of its official formal verification pipeline.
+
+### Phase 31F: Python-to-Lean Export Completion Report
+
+Project ℵω now includes a completion report for the Python-to-Lean finite export pipeline.
+
+Artifact:
+
+```text
+docs/lean_export_completion_report.md
+```
+
+Careful claim:
+
+> Project ℵω now has a Python-to-Lean export pipeline that generates finite Lean formal systems and finite satisfaction-preserving morphisms from Python data, then verifies the generated Lean artifacts inside the formal-stack gate.
