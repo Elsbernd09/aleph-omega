@@ -301,3 +301,23 @@ docs/mathlib_integration_feasibility.md
 ```
 
 This document analyzes what would be required to upgrade the standalone quotient-category-like Lean structure into a real Mathlib-compatible category instance.
+
+### Phase 29B: Experimental Mathlib Scaffold
+
+Project ℵω now includes a separate experimental Mathlib Lake project for future category-theory integration.
+
+New location:
+
+```text
+formal/aleph_omega_mathlib/
+```
+
+Checker:
+
+```bash
+./scripts/check_mathlib_scaffold.sh
+```
+
+Careful claim:
+
+> Project ℵω now has a separate experimental Mathlib scaffold. This is not yet a Mathlib Category instance for the main Aleph-Omega formalization.
