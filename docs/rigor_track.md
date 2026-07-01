@@ -90,3 +90,30 @@ The main new theorem is the Finite Satisfaction Preservation Theorem:
 > A bridge preserves satisfaction exactly when every satisfied source statement has a defined translated target statement that is also satisfied.
 
 This gives the project a stronger semantic core. Distortion is no longer only feature loss; it can also be failure to preserve satisfaction.
+
+## Phase 12: Categorical / Structural Upgrade
+
+Phase 12 adds a category-like structure to the rigor track.
+
+Objects are finite logical universes. Morphisms are finite bridges. Identity morphisms are identity bridges. Composition is bridge composition.
+
+Implemented files:
+
+- `src/rigor/composition.py`
+- `src/rigor/category.py`
+- `src/rigor/identity_laws.py`
+- `src/rigor/associativity.py`
+- `src/rigor/category_examples.py`
+- `tests/test_rigor_composition.py`
+- `tests/test_rigor_category.py`
+- `tests/test_rigor_identity_laws.py`
+- `tests/test_rigor_associativity.py`
+- `tests/test_rigor_category_examples.py`
+- `docs/category_structure.md`
+- `docs/category_examples.md`
+
+The key structural result is that finite bridges support identity-law and associativity checks under the implemented composition model.
+
+The key conceptual distinction is:
+
+> A bridge may be structurally valid while still being semantically lossy.

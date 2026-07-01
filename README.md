@@ -469,3 +469,30 @@ Read the proof and examples:
 - `docs/rigor_examples.md`
 
 This phase makes the project more mathematically serious by introducing satisfaction, designated truth values, and preservation failure under translation.
+
+## Phase 12: Categorical / Structural Upgrade
+
+Project ℵω now includes a category-like structural layer.
+
+This layer defines:
+
+- finite logical universes as objects
+- finite bridges as morphisms
+- identity bridges
+- bridge composition
+- identity-law checks
+- associativity checks
+- categorical examples
+
+Run Phase 12 tests:
+
+```bash
+python3 -m pytest tests/test_rigor_composition.py tests/test_rigor_category.py tests/test_rigor_identity_laws.py tests/test_rigor_associativity.py tests/test_rigor_category_examples.py
+```
+
+Read the category docs:
+
+- `docs/category_structure.md`
+- `docs/category_examples.md`
+
+The major conceptual point is that structural validity and semantic preservation are separate. A bridge can obey identity and associativity while still distorting semantic content.
