@@ -144,3 +144,17 @@ New artifacts:
 Careful claim:
 
 > Project Aleph-Omega now has both a Lean definition of morphism equivalence and a Python-side checker for extensional equivalence of finite institution morphisms.
+
+## Phase 24D Update: Python-Side Quotient Category
+
+The Python implementation now includes a computational analogue of the Lean standalone quotient category.
+
+New artifacts:
+
+- `src/rigor/python_quotient_category.py`
+- `tests/test_rigor_python_quotient_category.py`
+- `docs/python_quotient_category.md`
+
+Careful claim:
+
+> Project Aleph-Omega now has both a Lean standalone quotient category structure and a Python-side computational quotient category analogue for finite institution-like systems.
