@@ -283,3 +283,11 @@ docs/verification_status.md
 ```
 
 It separates Lean-checked results, Python-tested computational results, CI-checked infrastructure, and explicit non-claims.
+
+## Public Release Completion Report
+
+The public release package is summarized at:
+
+```text
+docs/public_release_completion_report.md
+```
