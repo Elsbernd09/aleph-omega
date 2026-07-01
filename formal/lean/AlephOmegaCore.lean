@@ -355,3 +355,115 @@ theorem preservation_not_automatic :
       exact bool_bad_translation_not_preserving
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 22A: Morphism equivalence.
+
+Instead of claiming strict equality of preservation morphism structures, we define
+an extensional equivalence relation.
+
+Two preservation morphisms are equivalent when they have the same sentence
+translation and the same model map.
+
+This is mathematically cleaner because the proof fields may differ while the
+actual morphism action is the same.
+-/
+
+/--
+Extensional equivalence of satisfaction-preserving morphisms.
+-/
+def MorphismEquivalent
+  {A B : FormalSystem}
+  (F G : PreservationMorphism A B) : Prop :=
+  (∀ φ : A.Sentence, F.translate φ = G.translate φ) ∧
+  (∀ m : A.Model, F.mapModel m = G.mapModel m)
+
+/--
+Morphism equivalence is reflexive.
+-/
+theorem morphism_equiv_refl
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B) :
+  MorphismEquivalent F F := by
+    constructor
+    · intro φ
+      rfl
+    · intro m
+      rfl
+
+/--
+Morphism equivalence is symmetric.
+-/
+theorem morphism_equiv_symm
+  {A B : FormalSystem}
+  {F G : PreservationMorphism A B} :
+  MorphismEquivalent F G -> MorphismEquivalent G F := by
+    intro h
+    constructor
+    · intro φ
+      exact Eq.symm (h.1 φ)
+    · intro m
+      exact Eq.symm (h.2 m)
+
+/--
+Morphism equivalence is transitive.
+-/
+theorem morphism_equiv_trans
+  {A B : FormalSystem}
+  {F G H : PreservationMorphism A B} :
+  MorphismEquivalent F G ->
+  MorphismEquivalent G H ->
+  MorphismEquivalent F H := by
+    intro hFG hGH
+    constructor
+    · intro φ
+      exact Eq.trans (hFG.1 φ) (hGH.1 φ)
+    · intro m
+      exact Eq.trans (hFG.2 m) (hGH.2 m)
+
+/--
+Left identity law as morphism equivalence.
+-/
+theorem left_identity_equivalent
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B) :
+  MorphismEquivalent (composeMorphism (identityMorphism A) F) F := by
+    constructor
+    · intro φ
+      rfl
+    · intro m
+      rfl
+
+/--
+Right identity law as morphism equivalence.
+-/
+theorem right_identity_equivalent
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B) :
+  MorphismEquivalent (composeMorphism F (identityMorphism B)) F := by
+    constructor
+    · intro φ
+      rfl
+    · intro m
+      rfl
+
+/--
+Associativity law as morphism equivalence.
+-/
+theorem associativity_equivalent
+  {A B C D : FormalSystem}
+  (F : PreservationMorphism A B)
+  (G : PreservationMorphism B C)
+  (H : PreservationMorphism C D) :
+  MorphismEquivalent
+    (composeMorphism (composeMorphism F G) H)
+    (composeMorphism F (composeMorphism G H)) := by
+      constructor
+      · intro φ
+        rfl
+      · intro m
+        rfl
+
+end AlephOmega
