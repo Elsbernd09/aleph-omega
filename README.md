@@ -718,3 +718,35 @@ Read the Phase 20 docs:
 Careful claim:
 
 > Project ℵω contains a finite institution-like formal layer with finite signatures, finite models, satisfaction relations, satisfaction-preserving morphisms, and a category-like structure of such morphisms.
+
+## Phase 21: Machine-Checkable Formalization
+
+Project ℵω now includes a Lean formalization prototype for the central satisfaction-preservation core.
+
+Lean artifacts:
+
+- `formal/lean/AlephOmegaCore.lean`
+- `scripts/check_lean.sh`
+- `docs/lean_core_formalization.md`
+- `docs/lean_machine_checking.md`
+- `docs/lean_category_laws.md`
+- `docs/lean_finite_example.md`
+- `docs/lean_failure_boundary.md`
+- `docs/lean_formalization_index.md`
+- `docs/formal_claim_upgrade.md`
+
+Machine-checked Lean prototype claims:
+
+- identity morphisms preserve satisfaction
+- composition of satisfaction-preserving morphisms preserves satisfaction
+- category-style identity and associativity laws for translation/model-map behavior
+- concrete BoolSystem example
+- concrete failure boundary showing preservation is not automatic
+
+Run Lean checker:
+
+./scripts/check_lean.sh
+
+Careful claim:
+
+> Project ℵω contains a Lean-checked prototype of its central satisfaction-preservation core. This does not machine-verify the entire Python implementation.
