@@ -405,3 +405,17 @@ docs/mathlib_quotient_category_completion_report.md
 Careful claim:
 
 > Project ℵω now contains an experimental Mathlib quotient category prototype whose morphisms are quotient classes of satisfaction-preserving morphisms, with representative-independent composition and a real Mathlib `Category` instance. It remains an experimental prototype pending cleanup and expert review.
+
+### Phase 30D: Standalone-to-Mathlib Correspondence Report
+
+Project ℵω now includes a correspondence report connecting the original standalone Lean core to the experimental Mathlib quotient category prototype.
+
+Artifact:
+
+```text
+docs/mathlib_correspondence_report.md
+```
+
+Careful claim:
+
+> Project ℵω now has a documented correspondence between its standalone Lean quotient-category core and its experimental Mathlib quotient category prototype. The two tracks are not yet definitionally unified.
