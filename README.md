@@ -963,3 +963,22 @@ New scripts:
 Purpose:
 
 > The sync guard prevents the Lake project from building stale Lean code that differs from the primary formalization file.
+
+### Phase 27C: Unified Formal Stack Build Gate
+
+Project ℵω now includes a single command for checking the full formal stack.
+
+New command:
+
+./scripts/check_formal_stack.sh
+
+The build gate checks:
+
+- primary Lean formalization
+- Lake synchronization
+- Lake project build
+- Python test suite
+
+Careful claim:
+
+> Project ℵω now has a unified formal verification gate for the Lean core, Lake scaffold, synchronization guard, and Python computational test suite.

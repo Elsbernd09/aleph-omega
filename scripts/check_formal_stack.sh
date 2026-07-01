@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source "$HOME/.elan/env"
+
+echo "== Aleph-Omega Formal Stack Check =="
+echo ""
+
+echo "1. Checking primary Lean formalization..."
+./scripts/check_lean.sh
+echo ""
+
+echo "2. Checking Lake synchronization..."
+./scripts/check_lake_sync.sh
+echo ""
+
+echo "3. Building Lake project..."
+./scripts/check_lake.sh
+echo ""
+
+echo "4. Running Python test suite..."
+python3 -m pytest
+echo ""
+
+echo "Aleph-Omega formal stack verified successfully."
