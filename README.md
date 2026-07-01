@@ -363,3 +363,17 @@ docs/mathlib_direct_category_completion_report.md
 Careful claim:
 
 > Project ℵω now contains an experimental Mathlib project with a real Category instance whose objects are formal systems and whose morphisms are satisfaction-preserving morphisms. This is still not yet the quotient category instance.
+
+### Phase 30A: Mathlib Quotient Category Blueprint
+
+Project ℵω now includes a technical blueprint for upgrading the direct Mathlib preservation-morphism category into a quotient category.
+
+Artifact:
+
+```text
+docs/mathlib_quotient_category_blueprint.md
+```
+
+Careful claim:
+
+> Project ℵω now has a detailed technical plan for a real Mathlib quotient category whose morphisms are equivalence classes of satisfaction-preserving morphisms. The quotient category instance itself is the next target.
