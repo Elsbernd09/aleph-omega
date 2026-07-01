@@ -934,3 +934,19 @@ Manuscript package includes:
 Careful claim:
 
 > Project ℵω is now organized as a finite institution-inspired, Lean-supported research artifact with a manuscript package that separates formal claims from computational analogues and explicit non-claims.
+
+## Phase 27: Lean Project Packaging
+
+Project ℵω now includes a standalone Lean Lake project scaffold.
+
+New Lake project:
+
+- `formal/aleph_omega_lake/`
+
+Build command:
+
+./scripts/check_lake.sh
+
+Careful claim:
+
+> Project ℵω now packages its Lean formal core as a standalone Lake project scaffold. This prepares the project for possible future Mathlib integration.
