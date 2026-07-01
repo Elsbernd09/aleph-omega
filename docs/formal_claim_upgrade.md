@@ -225,3 +225,19 @@ New Lean artifacts:
 Careful claim:
 
 > Project Aleph-Omega now contains a Lean-checked concrete finite system with positive preservation theorems and a negative preservation failure boundary.
+
+## Phase 25B Update: Nontrivial Lean Preservation Morphism
+
+Project Aleph-Omega now includes a non-identity satisfaction-preserving morphism between two concrete finite Lean systems.
+
+New Lean artifacts:
+
+- `RenamedTwoSystem`
+- `twoToRenamedSentence`
+- `twoToRenamedModel`
+- `two_to_renamed_preserves`
+- `twoToRenamedMorphism`
+
+Careful claim:
+
+> Project Aleph-Omega now contains a Lean-checked nontrivial satisfaction-preserving morphism between two concrete finite formal systems.

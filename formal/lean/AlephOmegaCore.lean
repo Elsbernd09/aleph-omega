@@ -1127,3 +1127,137 @@ theorem two_swap_translation_not_preserving :
     cases targetSat
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 25B: Nontrivial preservation morphism between two finite systems.
+
+We define a second finite system with renamed models and renamed sentences.
+
+Then we define a non-identity satisfaction-preserving morphism from TwoSystem
+to RenamedTwoSystem.
+-/
+
+inductive RenamedModel where
+  | a
+  | b
+deriving DecidableEq
+
+inductive RenamedSentence where
+  | alpha
+  | beta
+deriving DecidableEq
+
+/--
+A renamed finite system with two models and two sentences.
+
+Satisfaction relation:
+
+- a satisfies alpha
+- b satisfies beta
+- no other satisfaction judgements hold
+-/
+def RenamedTwoSystem : FormalSystem where
+  Model := RenamedModel
+  Sentence := RenamedSentence
+  Sat := fun m φ =>
+    match m, φ with
+    | RenamedModel.a, RenamedSentence.alpha => True
+    | RenamedModel.b, RenamedSentence.beta => True
+    | _, _ => False
+
+/--
+Translation from TwoSystem sentences to RenamedTwoSystem sentences.
+-/
+def twoToRenamedSentence :
+  TwoSystem.Sentence -> RenamedTwoSystem.Sentence :=
+  fun φ =>
+    match φ with
+    | TwoSentence.p => RenamedSentence.alpha
+    | TwoSentence.q => RenamedSentence.beta
+
+/--
+Model map from TwoSystem models to RenamedTwoSystem models.
+-/
+def twoToRenamedModel :
+  TwoSystem.Model -> RenamedTwoSystem.Model :=
+  fun m =>
+    match m with
+    | TwoModel.m0 => RenamedModel.a
+    | TwoModel.m1 => RenamedModel.b
+
+/--
+The nontrivial map from TwoSystem to RenamedTwoSystem preserves satisfaction.
+-/
+theorem two_to_renamed_preserves :
+  ∀ (m : TwoSystem.Model) (φ : TwoSystem.Sentence),
+    TwoSystem.Sat m φ ->
+    RenamedTwoSystem.Sat (twoToRenamedModel m) (twoToRenamedSentence φ) := by
+      intro m φ h
+      cases m <;> cases φ <;> simp [TwoSystem, RenamedTwoSystem, twoToRenamedModel, twoToRenamedSentence] at h ⊢
+
+/--
+A non-identity preservation morphism from TwoSystem to RenamedTwoSystem.
+-/
+def twoToRenamedMorphism :
+  PreservationMorphism TwoSystem RenamedTwoSystem where
+    translate := twoToRenamedSentence
+    mapModel := twoToRenamedModel
+    preserves := two_to_renamed_preserves
+
+/--
+Concrete preservation example: m0 satisfies p, and its image satisfies alpha.
+-/
+theorem two_to_renamed_m0_p :
+  RenamedTwoSystem.Sat
+    (twoToRenamedMorphism.mapModel TwoModel.m0)
+    (twoToRenamedMorphism.translate TwoSentence.p) := by
+      exact twoToRenamedMorphism.preserves TwoModel.m0 TwoSentence.p two_m0_satisfies_p
+
+/--
+Concrete preservation example: m1 satisfies q, and its image satisfies beta.
+-/
+theorem two_to_renamed_m1_q :
+  RenamedTwoSystem.Sat
+    (twoToRenamedMorphism.mapModel TwoModel.m1)
+    (twoToRenamedMorphism.translate TwoSentence.q) := by
+      exact twoToRenamedMorphism.preserves TwoModel.m1 TwoSentence.q two_m1_satisfies_q
+
+/--
+Composing the TwoSystem-to-RenamedTwoSystem morphism with identity preserves satisfaction.
+-/
+theorem two_to_renamed_then_identity_preserves :
+  ∀ (m : TwoSystem.Model) (φ : TwoSystem.Sentence),
+    TwoSystem.Sat m φ ->
+    RenamedTwoSystem.Sat
+      ((composeMorphism twoToRenamedMorphism (identityMorphism RenamedTwoSystem)).mapModel m)
+      ((composeMorphism twoToRenamedMorphism (identityMorphism RenamedTwoSystem)).translate φ) := by
+        intro m φ h
+        exact
+          composition_preserves_satisfaction
+            twoToRenamedMorphism
+            (identityMorphism RenamedTwoSystem)
+            m
+            φ
+            h
+
+/--
+Composing identity with the TwoSystem-to-RenamedTwoSystem morphism preserves satisfaction.
+-/
+theorem identity_then_two_to_renamed_preserves :
+  ∀ (m : TwoSystem.Model) (φ : TwoSystem.Sentence),
+    TwoSystem.Sat m φ ->
+    RenamedTwoSystem.Sat
+      ((composeMorphism (identityMorphism TwoSystem) twoToRenamedMorphism).mapModel m)
+      ((composeMorphism (identityMorphism TwoSystem) twoToRenamedMorphism).translate φ) := by
+        intro m φ h
+        exact
+          composition_preserves_satisfaction
+            (identityMorphism TwoSystem)
+            twoToRenamedMorphism
+            m
+            φ
+            h
+
+end AlephOmega
