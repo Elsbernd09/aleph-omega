@@ -715,3 +715,78 @@ theorem quotient_associativity
     exact equivalent_morphisms_same_quotient (associativity_equivalent F G H)
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 23A: Quotient composition as an actual operation.
+
+Phase 22 proved quotient composition is well-defined.
+
+Now we use that theorem to define composition directly on quotient morphisms.
+-/
+
+/--
+Composition of quotient morphisms.
+
+Given quotient arrows [F] : A -> B and [G] : B -> C, define their composite as
+[G ∘ F] : A -> C.
+-/
+def quotientCompose
+  {A B C : FormalSystem}
+  (qF : QuotientMorphism A B)
+  (qG : QuotientMorphism B C) :
+  QuotientMorphism A C :=
+  Quotient.liftOn₂ qF qG
+    (fun F G => quotientOf (composeMorphism F G))
+    (by
+      intro F F' G G' hF hG
+      exact quotient_composition_well_defined hF hG)
+
+/--
+Quotient left identity law.
+
+The quotient identity composed on the left acts as identity.
+-/
+theorem quotient_category_left_identity
+  {A B : FormalSystem}
+  (qF : QuotientMorphism A B) :
+  quotientCompose (quotientIdentity A) qF = qF := by
+    refine Quotient.inductionOn qF ?_
+    intro F
+    exact quotient_left_identity F
+
+/--
+Quotient right identity law.
+
+The quotient identity composed on the right acts as identity.
+-/
+theorem quotient_category_right_identity
+  {A B : FormalSystem}
+  (qF : QuotientMorphism A B) :
+  quotientCompose qF (quotientIdentity B) = qF := by
+    refine Quotient.inductionOn qF ?_
+    intro F
+    exact quotient_right_identity F
+
+/--
+Quotient associativity law.
+
+Composition of quotient morphisms is associative.
+-/
+theorem quotient_category_associativity
+  {A B C D : FormalSystem}
+  (qF : QuotientMorphism A B)
+  (qG : QuotientMorphism B C)
+  (qH : QuotientMorphism C D) :
+  quotientCompose (quotientCompose qF qG) qH =
+  quotientCompose qF (quotientCompose qG qH) := by
+    refine Quotient.inductionOn qF ?_
+    intro F
+    refine Quotient.inductionOn qG ?_
+    intro G
+    refine Quotient.inductionOn qH ?_
+    intro H
+    exact quotient_associativity F G H
+
+end AlephOmega
