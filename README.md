@@ -349,3 +349,17 @@ formal/aleph_omega_mathlib/AlephOmegaMathlib/FormalSystemCategory.lean
 Careful claim:
 
 > Project ℵω now has a real Mathlib category instance for the direct preservation-morphism structure. This is not yet the quotient category instance.
+
+### Phase 29E: Mathlib Direct Category Completion Report
+
+Project ℵω now includes a completion report for its first serious Mathlib category-theory milestone.
+
+Artifact:
+
+```text
+docs/mathlib_direct_category_completion_report.md
+```
+
+Careful claim:
+
+> Project ℵω now contains an experimental Mathlib project with a real Category instance whose objects are formal systems and whose morphisms are satisfaction-preserving morphisms. This is still not yet the quotient category instance.
