@@ -889,3 +889,92 @@ theorem quotient_id_is_identity_class
     rfl
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 23C: Standalone quotient category structure.
+
+This defines a small Aleph-Omega-specific category-like structure directly in Lean.
+
+It is intentionally independent of Mathlib's Category typeclass.
+-/
+
+/--
+A standalone quotient category structure for Project Aleph-Omega.
+
+Objects are fixed to be FormalSystem values.
+
+This avoids unnecessary universe-level complexity while still packaging:
+
+- hom-types
+- identity arrows
+- composition
+- left identity law
+- right identity law
+- associativity law
+-/
+structure StandaloneQuotientCategory where
+  Hom : FormalSystem -> FormalSystem -> Type
+  id : (A : FormalSystem) -> Hom A A
+  comp : {A B C : FormalSystem} -> Hom A B -> Hom B C -> Hom A C
+  left_id :
+    ∀ {A B : FormalSystem} (F : Hom A B),
+      comp (id A) F = F
+  right_id :
+    ∀ {A B : FormalSystem} (F : Hom A B),
+      comp F (id B) = F
+  assoc :
+    ∀ {A B C D : FormalSystem}
+      (F : Hom A B)
+      (G : Hom B C)
+      (H : Hom C D),
+      comp (comp F G) H = comp F (comp G H)
+
+/--
+The Aleph-Omega standalone quotient category.
+
+Arrows are quotient homs of satisfaction-preserving morphisms modulo
+extensional equivalence.
+-/
+def AlephOmegaQuotientCategory : StandaloneQuotientCategory where
+  Hom := QuotientHom
+  id := quotientId
+  comp := fun F G => quotientComp F G
+  left_id := by
+    intro A B F
+    exact quotient_api_left_identity F
+  right_id := by
+    intro A B F
+    exact quotient_api_right_identity F
+  assoc := by
+    intro A B C D F G H
+    exact quotient_api_associativity F G H
+
+/--
+The hom-type of the Aleph-Omega quotient category is QuotientHom.
+-/
+theorem quotient_category_hom_is_quotient_hom
+  (A B : FormalSystem) :
+  AlephOmegaQuotientCategory.Hom A B = QuotientHom A B := by
+    rfl
+
+/--
+The identity operation in the category structure agrees with quotientId.
+-/
+theorem quotient_category_id_is_quotient_id
+  (A : FormalSystem) :
+  AlephOmegaQuotientCategory.id A = quotientId A := by
+    rfl
+
+/--
+The composition operation in the category structure agrees with quotientComp.
+-/
+theorem quotient_category_comp_is_quotient_comp
+  {A B C : FormalSystem}
+  (F : AlephOmegaQuotientCategory.Hom A B)
+  (G : AlephOmegaQuotientCategory.Hom B C) :
+  AlephOmegaQuotientCategory.comp F G = quotientComp F G := by
+    rfl
+
+end AlephOmega
