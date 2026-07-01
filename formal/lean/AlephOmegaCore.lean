@@ -106,3 +106,98 @@ theorem identity_preserves_satisfaction
     exact h
 
 end AlephOmega
+
+namespace AlephOmega
+
+/--
+Left identity law for preservation morphisms.
+
+The identity morphism composed before F has the same sentence translation and
+model map as F.
+-/
+theorem left_identity_translation
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B)
+  (φ : A.Sentence) :
+  (composeMorphism (identityMorphism A) F).translate φ = F.translate φ := by
+    rfl
+
+theorem left_identity_model_map
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B)
+  (m : A.Model) :
+  (composeMorphism (identityMorphism A) F).mapModel m = F.mapModel m := by
+    rfl
+
+/--
+Right identity law for preservation morphisms.
+
+F composed before the identity morphism has the same sentence translation and
+model map as F.
+-/
+theorem right_identity_translation
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B)
+  (φ : A.Sentence) :
+  (composeMorphism F (identityMorphism B)).translate φ = F.translate φ := by
+    rfl
+
+theorem right_identity_model_map
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B)
+  (m : A.Model) :
+  (composeMorphism F (identityMorphism B)).mapModel m = F.mapModel m := by
+    rfl
+
+/--
+Associativity law for sentence translation.
+
+For F : A -> B, G : B -> C, and H : C -> D, the sentence translation part of
+composition is associative.
+-/
+theorem associativity_translation
+  {A B C D : FormalSystem}
+  (F : PreservationMorphism A B)
+  (G : PreservationMorphism B C)
+  (H : PreservationMorphism C D)
+  (φ : A.Sentence) :
+  (composeMorphism (composeMorphism F G) H).translate φ =
+  (composeMorphism F (composeMorphism G H)).translate φ := by
+    rfl
+
+/--
+Associativity law for model maps.
+
+For F : A -> B, G : B -> C, and H : C -> D, the model-map part of composition
+is associative.
+-/
+theorem associativity_model_map
+  {A B C D : FormalSystem}
+  (F : PreservationMorphism A B)
+  (G : PreservationMorphism B C)
+  (H : PreservationMorphism C D)
+  (m : A.Model) :
+  (composeMorphism (composeMorphism F G) H).mapModel m =
+  (composeMorphism F (composeMorphism G H)).mapModel m := by
+    rfl
+
+/--
+Associativity law for satisfaction preservation.
+
+Both parenthesizations of a triple composite preserve satisfaction in the same
+target system.
+-/
+theorem associativity_preserves_satisfaction
+  {A B C D : FormalSystem}
+  (F : PreservationMorphism A B)
+  (G : PreservationMorphism B C)
+  (H : PreservationMorphism C D)
+  (m : A.Model)
+  (φ : A.Sentence)
+  (h : A.Sat m φ) :
+  D.Sat
+    ((composeMorphism (composeMorphism F G) H).mapModel m)
+    ((composeMorphism (composeMorphism F G) H).translate φ) := by
+      exact (composeMorphism (composeMorphism F G) H).preserves m φ h
+
+end AlephOmega
