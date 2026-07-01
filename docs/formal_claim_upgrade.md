@@ -142,3 +142,25 @@ Machine-checked prototype results now include:
 Strongest careful claim:
 
 > Project Aleph-Omega has a Lean-checked quotient-category foundation for satisfaction-preserving morphisms modulo extensional equivalence. This is not yet a complete Mathlib Category instance.
+
+## Phase 23 Claim Upgrade: Standalone Quotient Category Structure
+
+Phase 23 turns the quotient-category foundation into an actual standalone Lean category-like structure.
+
+Lean-supported artifacts now include:
+
+- quotient composition operation
+- quotient left identity law
+- quotient right identity law
+- quotient associativity law
+- standalone quotient category API
+- StandaloneQuotientCategory structure
+- AlephOmegaQuotientCategory instance
+
+Strongest careful claim:
+
+> Project Aleph-Omega has a Lean-defined standalone quotient category structure whose objects are formal systems and whose arrows are quotient homs of satisfaction-preserving morphisms modulo extensional equivalence. The structure includes Lean-checked identity and associativity laws.
+
+Limitation:
+
+> This is still not a Mathlib Category instance.
