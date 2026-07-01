@@ -828,3 +828,19 @@ Careful claim:
 Limitation:
 
 > The Python implementation is not fully machine-verified.
+
+### Phase 24 Completion: Lean/Python Correspondence
+
+Project ℵω now includes a completed first correspondence layer between the Lean formal core and the Python computational implementation.
+
+New report:
+
+- `docs/correspondence_completion_report.md`
+
+Strongest careful claim:
+
+> Project ℵω contains a Lean-checked abstract quotient-category core and a Python computational analogue for finite institution-like systems, with a documented correspondence layer connecting formal systems, satisfaction, preservation morphisms, morphism equivalence, quotient morphisms, quotient composition, and quotient category structure.
+
+Limitation:
+
+> The Python implementation is not fully machine-verified by Lean.
