@@ -982,3 +982,24 @@ The build gate checks:
 Careful claim:
 
 > Project ℵω now has a unified formal verification gate for the Lean core, Lake scaffold, synchronization guard, and Python computational test suite.
+
+### Phase 27D: GitHub Actions Formal Stack CI
+
+Project ℵω now includes GitHub Actions continuous integration for the formal stack.
+
+New workflow:
+
+- `.github/workflows/formal-stack.yml`
+
+The workflow checks:
+
+- Python test setup
+- Lean installation
+- Lake core synchronization
+- primary Lean formalization
+- Lake project build
+- full Python test suite
+
+Careful claim:
+
+> Project ℵω now has continuous integration for its Lean, Lake, and Python formal stack.
