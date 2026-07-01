@@ -447,3 +447,17 @@ docs/mathlib_strengthening_completion_report.md
 Careful claim:
 
 > Project ℵω now has an experimental Mathlib category-theory track with a direct category, a quotient category prototype, representative-independent quotient composition, and a concrete three-system preservation chain.
+
+### Phase 31A: Python-to-Lean Export Blueprint
+
+Project ℵω now begins the Python-to-Lean finite model export track.
+
+Artifact:
+
+```text
+docs/lean_export_blueprint.md
+```
+
+Careful claim:
+
+> Project ℵω now has a technical blueprint for exporting finite Python semantic systems into Lean finite formal systems.
