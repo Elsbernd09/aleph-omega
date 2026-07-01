@@ -245,3 +245,38 @@ The careful claim is:
 > The project includes a formal verification interface that records finite claims, audits theorem-like statements, tracks proof obligations, and separates verified finite results from conjectural generalizations.
 
 This is not full machine proof. The strongest claims remain finite, computational, and model-bound.
+
+## Phase 17: Exportable Research Artifact Layer
+
+Phase 17 adds generated research artifacts to the rigor track.
+
+Implemented files:
+
+- `src/rigor/research_abstract.py`
+- `src/rigor/theorem_inventory.py`
+- `src/rigor/architecture_map.py`
+- `src/rigor/final_research_memo.py`
+- `tests/test_rigor_research_abstract.py`
+- `tests/test_rigor_theorem_inventory.py`
+- `tests/test_rigor_architecture_map.py`
+- `tests/test_rigor_final_research_memo.py`
+- `docs/research_abstract.md`
+- `docs/theorem_inventory.md`
+- `docs/architecture_map.md`
+- `docs/final_research_memo.md`
+- `docs/research_artifacts.md`
+
+Phase 17 generates readable research artifacts from the codebase.
+
+It adds:
+
+- research abstract generation
+- theorem inventory generation
+- architecture map generation
+- final research memo generation
+
+The careful claim is:
+
+> Project Aleph-Omega is a finite computational mathematics framework for studying semantic preservation and distortion across generated finite bridge systems, with theorem-like claims recorded, tested, audited, and bounded by explicit limitations.
+
+This does not claim universal results about all logics, categories, topoi, or model theories.

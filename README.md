@@ -619,3 +619,37 @@ Read the Phase 16 docs:
 Careful claim:
 
 > Project ℵω records finite claims, audits theorem-like statements, tracks proof obligations, and separates verified finite results from conjectural generalizations.
+
+## Phase 17: Exportable Research Artifact Layer
+
+Project ℵω now generates polished research artifacts from the codebase.
+
+This layer adds:
+
+- research abstract generation
+- theorem inventory generation
+- architecture map generation
+- final research memo generation
+
+Generate the research artifacts:
+
+python3 -m src.rigor.research_abstract
+python3 -m src.rigor.theorem_inventory
+python3 -m src.rigor.architecture_map
+python3 -m src.rigor.final_research_memo
+
+Run Phase 17 tests:
+
+python3 -m pytest tests/test_rigor_research_abstract.py tests/test_rigor_theorem_inventory.py tests/test_rigor_architecture_map.py tests/test_rigor_final_research_memo.py
+
+Read the Phase 17 docs:
+
+- `docs/research_artifacts.md`
+- `docs/research_abstract.md`
+- `docs/theorem_inventory.md`
+- `docs/architecture_map.md`
+- `docs/final_research_memo.md`
+
+Careful claim:
+
+> Project ℵω is a finite computational mathematics framework for studying semantic preservation and distortion across generated finite bridge systems, with theorem-like claims recorded, tested, audited, and bounded by explicit limitations.
