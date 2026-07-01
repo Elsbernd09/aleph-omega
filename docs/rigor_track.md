@@ -315,3 +315,34 @@ The careful claim is:
 > The reviewer-readiness layer improves repository completeness, navigation, and reviewability.
 
 This layer does not verify mathematical truth; it checks project organization and artifact availability.
+
+## Phase 20: Institution-Theoretic Upgrade / Real Mathematical Anchoring
+
+Phase 20 connects Project Aleph-Omega to finite institution-like systems inspired by institution theory.
+
+Implemented files:
+
+- `src/rigor/finite_institution.py`
+- `src/rigor/institution_morphism.py`
+- `src/rigor/institution_satisfaction_theorem.py`
+- `src/rigor/institution_category.py`
+- `src/rigor/institution_exposition.py`
+- `src/rigor/lean_plan.py`
+- `tests/test_rigor_finite_institution.py`
+- `tests/test_rigor_institution_morphism.py`
+- `tests/test_rigor_institution_satisfaction_theorem.py`
+- `tests/test_rigor_institution_category.py`
+- `tests/test_rigor_institution_exposition.py`
+- `tests/test_rigor_lean_plan.py`
+- `docs/finite_institution.md`
+- `docs/institution_morphism.md`
+- `docs/institution_satisfaction_theorem.md`
+- `docs/institution_category.md`
+- `docs/institution_theoretic_upgrade.md`
+- `docs/lean_formalization_plan.md`
+
+The careful claim is:
+
+> Project Aleph-Omega now contains a finite institution-like formal layer with finite signatures, finite models, satisfaction relations, satisfaction-preserving morphisms, and a category-like structure of such morphisms.
+
+This is a real mathematical anchoring step, but not yet a full institution-theoretic development or machine-verified proof.

@@ -687,3 +687,34 @@ Read the Phase 18 docs:
 Careful claim:
 
 > Project ℵω includes reviewer-readiness tools that improve repository completeness, navigation, and reviewability.
+
+## Phase 20: Institution-Theoretic Upgrade / Real Mathematical Anchoring
+
+Project ℵω now includes a finite institution-like formal layer inspired by institution theory.
+
+This layer adds:
+
+- finite signatures
+- finite institution-like systems
+- finite institution morphisms
+- finite institution satisfaction theorem
+- finite institution category-like structure
+- institution-theoretic exposition
+- Lean formalization plan
+
+Run Phase 20 tests:
+
+python3 -m pytest tests/test_rigor_finite_institution.py tests/test_rigor_institution_morphism.py tests/test_rigor_institution_satisfaction_theorem.py tests/test_rigor_institution_category.py tests/test_rigor_institution_exposition.py tests/test_rigor_lean_plan.py
+
+Read the Phase 20 docs:
+
+- `docs/finite_institution.md`
+- `docs/institution_morphism.md`
+- `docs/institution_satisfaction_theorem.md`
+- `docs/institution_category.md`
+- `docs/institution_theoretic_upgrade.md`
+- `docs/lean_formalization_plan.md`
+
+Careful claim:
+
+> Project ℵω contains a finite institution-like formal layer with finite signatures, finite models, satisfaction relations, satisfaction-preserving morphisms, and a category-like structure of such morphisms.
