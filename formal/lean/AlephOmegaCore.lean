@@ -276,3 +276,82 @@ theorem bool_identity_composition_true :
     rfl
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Concrete failure boundary example.
+
+The BoolSystem has:
+- models = Bool
+- sentences = Bool
+- satisfaction = equality
+
+Now define a bad translation that flips sentences but keeps models unchanged.
+
+For m = true and φ = true:
+- source satisfaction holds because true = true
+- translated sentence is false
+- target satisfaction fails because true ≠ false
+
+This demonstrates a concrete failure of satisfaction preservation.
+-/
+
+/--
+Sentence negation on Bool.
+-/
+def boolNegSentence : BoolSystem.Sentence -> BoolSystem.Sentence :=
+  fun φ => not φ
+
+/--
+Model identity on Bool.
+-/
+def boolIdentityModel : BoolSystem.Model -> BoolSystem.Model :=
+  fun m => m
+
+/--
+A concrete witness that the bad Bool translation fails preservation.
+-/
+theorem bool_bad_translation_failure :
+  BoolSystem.Sat true true ∧
+  ¬ BoolSystem.Sat (boolIdentityModel true) (boolNegSentence true) := by
+    constructor
+    · rfl
+    · intro h
+      cases h
+
+/--
+There cannot exist a proof that the bad Bool translation preserves satisfaction.
+-/
+theorem bool_bad_translation_not_preserving :
+  ¬ (
+    ∀ (m : BoolSystem.Model) (φ : BoolSystem.Sentence),
+      BoolSystem.Sat m φ ->
+      BoolSystem.Sat (boolIdentityModel m) (boolNegSentence φ)
+  ) := by
+    intro h
+    have sourceSat : BoolSystem.Sat true true := by
+      rfl
+    have targetSat : BoolSystem.Sat (boolIdentityModel true) (boolNegSentence true) :=
+      h true true sourceSat
+    cases targetSat
+
+/--
+Failure boundary statement:
+
+Satisfaction preservation is not automatic.
+A sentence translation can destroy satisfaction.
+-/
+theorem preservation_not_automatic :
+  ∃ (translate : BoolSystem.Sentence -> BoolSystem.Sentence)
+    (mapModel : BoolSystem.Model -> BoolSystem.Model),
+    ¬ (
+      ∀ (m : BoolSystem.Model) (φ : BoolSystem.Sentence),
+        BoolSystem.Sat m φ ->
+        BoolSystem.Sat (mapModel m) (translate φ)
+    ) := by
+      exists boolNegSentence
+      exists boolIdentityModel
+      exact bool_bad_translation_not_preserving
+
+end AlephOmega
