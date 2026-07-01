@@ -1406,3 +1406,83 @@ theorem two_to_third_m1_q :
       exact two_to_third_composite_preserves TwoModel.m1 TwoSentence.q two_m1_satisfies_q
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 25D: Concrete quotient morphisms for the finite chain.
+
+This connects the concrete nontrivial preservation chain to the quotient-category
+layer.
+
+We define quotient homs for:
+
+TwoSystem -> RenamedTwoSystem
+RenamedTwoSystem -> ThirdTwoSystem
+TwoSystem -> ThirdTwoSystem
+
+Then we prove that quotient composition gives the quotient class of the
+composite preservation morphism.
+-/
+
+/--
+The quotient hom represented by the nontrivial morphism
+TwoSystem -> RenamedTwoSystem.
+-/
+def qTwoToRenamed :
+  QuotientHom TwoSystem RenamedTwoSystem :=
+  quotientHomOf twoToRenamedMorphism
+
+/--
+The quotient hom represented by the nontrivial morphism
+RenamedTwoSystem -> ThirdTwoSystem.
+-/
+def qRenamedToThird :
+  QuotientHom RenamedTwoSystem ThirdTwoSystem :=
+  quotientHomOf renamedToThirdMorphism
+
+/--
+The quotient hom represented by the composite morphism
+TwoSystem -> ThirdTwoSystem.
+-/
+def qTwoToThird :
+  QuotientHom TwoSystem ThirdTwoSystem :=
+  quotientHomOf twoToThirdComposite
+
+/--
+Composing the quotient homs gives the quotient hom of the concrete composite.
+-/
+theorem q_two_to_third_composition :
+  quotientComp qTwoToRenamed qRenamedToThird = qTwoToThird := by
+    rfl
+
+/--
+The quotient category composition operation agrees with the concrete chain.
+-/
+theorem quotient_category_composes_concrete_chain :
+  AlephOmegaQuotientCategory.comp qTwoToRenamed qRenamedToThird = qTwoToThird := by
+    rfl
+
+/--
+Left identity holds for the concrete quotient morphism qTwoToRenamed.
+-/
+theorem q_two_to_renamed_left_identity :
+  quotientComp (quotientId TwoSystem) qTwoToRenamed = qTwoToRenamed := by
+    exact quotient_api_left_identity qTwoToRenamed
+
+/--
+Right identity holds for the concrete quotient morphism qTwoToRenamed.
+-/
+theorem q_two_to_renamed_right_identity :
+  quotientComp qTwoToRenamed (quotientId RenamedTwoSystem) = qTwoToRenamed := by
+    exact quotient_api_right_identity qTwoToRenamed
+
+/--
+Associativity holds for the concrete chain with a trailing identity.
+-/
+theorem q_concrete_chain_associativity_with_identity :
+  quotientComp (quotientComp qTwoToRenamed qRenamedToThird) (quotientId ThirdTwoSystem) =
+  quotientComp qTwoToRenamed (quotientComp qRenamedToThird (quotientId ThirdTwoSystem)) := by
+    exact quotient_api_associativity qTwoToRenamed qRenamedToThird (quotientId ThirdTwoSystem)
+
+end AlephOmega

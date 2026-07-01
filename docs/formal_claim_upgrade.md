@@ -258,3 +258,19 @@ New Lean artifacts:
 Careful claim:
 
 > Project Aleph-Omega now contains a Lean-checked nontrivial preservation chain across three concrete finite formal systems.
+
+## Phase 25D Update: Concrete Quotient Chain in Lean
+
+Project Aleph-Omega now connects the concrete three-system preservation chain to the quotient-category layer.
+
+New Lean artifacts:
+
+- `qTwoToRenamed`
+- `qRenamedToThird`
+- `qTwoToThird`
+- `q_two_to_third_composition`
+- `quotient_category_composes_concrete_chain`
+
+Careful claim:
+
+> Project Aleph-Omega now contains a Lean-checked concrete finite preservation chain integrated into the standalone quotient category structure.
