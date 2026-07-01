@@ -419,3 +419,17 @@ docs/mathlib_correspondence_report.md
 Careful claim:
 
 > Project ℵω now has a documented correspondence between its standalone Lean quotient-category core and its experimental Mathlib quotient category prototype. The two tracks are not yet definitionally unified.
+
+### Phase 30E: Mathlib Concrete Three-System Chain
+
+Project ℵω now ports the concrete three-system preservation chain into the experimental Mathlib quotient-category track.
+
+Artifact:
+
+```text
+formal/aleph_omega_mathlib/AlephOmegaMathlib/ConcreteChain.lean
+```
+
+Careful claim:
+
+> Project ℵω now has a concrete three-system preservation chain inside the experimental Mathlib quotient-category prototype.
