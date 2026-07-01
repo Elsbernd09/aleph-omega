@@ -461,3 +461,19 @@ docs/lean_export_blueprint.md
 Careful claim:
 
 > Project ℵω now has a technical blueprint for exporting finite Python semantic systems into Lean finite formal systems.
+
+### Phase 31B: Python-to-Lean Finite System Exporter
+
+Project ℵω now includes its first Python-to-Lean exporter for finite formal systems.
+
+Artifacts:
+
+```text
+src/rigor/lean_finite_system_exporter.py
+formal/generated/ExportedTinySystem.lean
+docs/lean_finite_system_exporter.md
+```
+
+Careful claim:
+
+> Project ℵω now has a Python-to-Lean exporter that generates a finite formal system with Lean-checkable satisfaction facts.
