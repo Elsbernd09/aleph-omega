@@ -950,3 +950,16 @@ Build command:
 Careful claim:
 
 > Project ℵω now packages its Lean formal core as a standalone Lake project scaffold. This prepares the project for possible future Mathlib integration.
+
+### Phase 27B: Lake Synchronization Guard
+
+Project ℵω now includes scripts that keep the primary Lean core and Lake-project Lean core synchronized.
+
+New scripts:
+
+- `scripts/sync_lake_core.sh`
+- `scripts/check_lake_sync.sh`
+
+Purpose:
+
+> The sync guard prevents the Lake project from building stale Lean code that differs from the primary formalization file.
