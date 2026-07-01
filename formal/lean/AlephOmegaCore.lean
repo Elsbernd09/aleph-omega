@@ -1261,3 +1261,148 @@ theorem identity_then_two_to_renamed_preserves :
             h
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 25C: Nontrivial composition chain.
+
+We add a third finite system and a second nontrivial preservation morphism.
+
+Then we prove that the composite chain from TwoSystem to ThirdTwoSystem
+preserves satisfaction.
+-/
+
+inductive ThirdModel where
+  | x
+  | y
+deriving DecidableEq
+
+inductive ThirdSentence where
+  | gamma
+  | delta
+deriving DecidableEq
+
+/--
+A third concrete finite system.
+
+Satisfaction relation:
+
+- x satisfies gamma
+- y satisfies delta
+- no other satisfaction judgements hold
+-/
+def ThirdTwoSystem : FormalSystem where
+  Model := ThirdModel
+  Sentence := ThirdSentence
+  Sat := fun m φ =>
+    match m, φ with
+    | ThirdModel.x, ThirdSentence.gamma => True
+    | ThirdModel.y, ThirdSentence.delta => True
+    | _, _ => False
+
+/--
+Sentence translation from RenamedTwoSystem to ThirdTwoSystem.
+-/
+def renamedToThirdSentence :
+  RenamedTwoSystem.Sentence -> ThirdTwoSystem.Sentence :=
+  fun φ =>
+    match φ with
+    | RenamedSentence.alpha => ThirdSentence.gamma
+    | RenamedSentence.beta => ThirdSentence.delta
+
+/--
+Model map from RenamedTwoSystem to ThirdTwoSystem.
+-/
+def renamedToThirdModel :
+  RenamedTwoSystem.Model -> ThirdTwoSystem.Model :=
+  fun m =>
+    match m with
+    | RenamedModel.a => ThirdModel.x
+    | RenamedModel.b => ThirdModel.y
+
+/--
+The map from RenamedTwoSystem to ThirdTwoSystem preserves satisfaction.
+-/
+theorem renamed_to_third_preserves :
+  ∀ (m : RenamedTwoSystem.Model) (φ : RenamedTwoSystem.Sentence),
+    RenamedTwoSystem.Sat m φ ->
+    ThirdTwoSystem.Sat (renamedToThirdModel m) (renamedToThirdSentence φ) := by
+      intro m φ h
+      cases m <;> cases φ <;> simp [RenamedTwoSystem, ThirdTwoSystem, renamedToThirdModel, renamedToThirdSentence] at h ⊢
+
+/--
+A nontrivial preservation morphism from RenamedTwoSystem to ThirdTwoSystem.
+-/
+def renamedToThirdMorphism :
+  PreservationMorphism RenamedTwoSystem ThirdTwoSystem where
+    translate := renamedToThirdSentence
+    mapModel := renamedToThirdModel
+    preserves := renamed_to_third_preserves
+
+/--
+The composite morphism from TwoSystem to ThirdTwoSystem.
+-/
+def twoToThirdComposite :
+  PreservationMorphism TwoSystem ThirdTwoSystem :=
+  composeMorphism twoToRenamedMorphism renamedToThirdMorphism
+
+/--
+The composite sends p to gamma.
+-/
+theorem two_to_third_translates_p :
+  twoToThirdComposite.translate TwoSentence.p = ThirdSentence.gamma := by
+    rfl
+
+/--
+The composite sends q to delta.
+-/
+theorem two_to_third_translates_q :
+  twoToThirdComposite.translate TwoSentence.q = ThirdSentence.delta := by
+    rfl
+
+/--
+The composite sends m0 to x.
+-/
+theorem two_to_third_maps_m0 :
+  twoToThirdComposite.mapModel TwoModel.m0 = ThirdModel.x := by
+    rfl
+
+/--
+The composite sends m1 to y.
+-/
+theorem two_to_third_maps_m1 :
+  twoToThirdComposite.mapModel TwoModel.m1 = ThirdModel.y := by
+    rfl
+
+/--
+The full nontrivial chain preserves satisfaction.
+-/
+theorem two_to_third_composite_preserves :
+  ∀ (m : TwoSystem.Model) (φ : TwoSystem.Sentence),
+    TwoSystem.Sat m φ ->
+    ThirdTwoSystem.Sat
+      (twoToThirdComposite.mapModel m)
+      (twoToThirdComposite.translate φ) := by
+        intro m φ h
+        exact twoToThirdComposite.preserves m φ h
+
+/--
+Concrete chain example: m0 satisfies p, so x satisfies gamma.
+-/
+theorem two_to_third_m0_p :
+  ThirdTwoSystem.Sat
+    (twoToThirdComposite.mapModel TwoModel.m0)
+    (twoToThirdComposite.translate TwoSentence.p) := by
+      exact two_to_third_composite_preserves TwoModel.m0 TwoSentence.p two_m0_satisfies_p
+
+/--
+Concrete chain example: m1 satisfies q, so y satisfies delta.
+-/
+theorem two_to_third_m1_q :
+  ThirdTwoSystem.Sat
+    (twoToThirdComposite.mapModel TwoModel.m1)
+    (twoToThirdComposite.translate TwoSentence.q) := by
+      exact two_to_third_composite_preserves TwoModel.m1 TwoSentence.q two_m1_satisfies_q
+
+end AlephOmega

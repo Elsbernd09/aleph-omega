@@ -241,3 +241,20 @@ New Lean artifacts:
 Careful claim:
 
 > Project Aleph-Omega now contains a Lean-checked nontrivial satisfaction-preserving morphism between two concrete finite formal systems.
+
+## Phase 25C Update: Nontrivial Lean Preservation Chain
+
+Project Aleph-Omega now includes a Lean-checked nontrivial preservation chain across three concrete finite systems.
+
+New Lean artifacts:
+
+- `ThirdTwoSystem`
+- `renamedToThirdMorphism`
+- `twoToThirdComposite`
+- `two_to_third_composite_preserves`
+- `two_to_third_m0_p`
+- `two_to_third_m1_q`
+
+Careful claim:
+
+> Project Aleph-Omega now contains a Lean-checked nontrivial preservation chain across three concrete finite formal systems.
