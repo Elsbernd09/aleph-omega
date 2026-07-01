@@ -526,3 +526,34 @@ Read the Phase 13 docs:
 - `docs/functorial_semantics_examples.md`
 
 This phase strengthens the project by showing that satisfaction-preserving bridge morphisms compose, while non-preserving bridges can create measurable distortion accumulation.
+
+## Phase 14: Finite Model Search / Theorem Stress Testing
+
+Project ℵω now includes a finite model-search layer for theorem stress testing.
+
+This layer adds:
+
+- generated finite logical universes
+- richer generated bridge cases
+- Bridge Distortion Theorem stress search
+- satisfaction preservation search
+- combined model-search report generation
+
+Generate the combined model-search report:
+
+python3 -m src.rigor.search_report
+
+Run Phase 14 tests:
+
+python3 -m pytest tests/test_rigor_model_search.py tests/test_rigor_bridge_case_generator.py tests/test_rigor_bridge_distortion_search.py tests/test_rigor_satisfaction_search.py tests/test_rigor_search_report.py
+
+Read the Phase 14 docs:
+
+- `docs/model_search.md`
+- `docs/bridge_distortion_search.md`
+- `docs/satisfaction_search.md`
+- `docs/model_search_report.md`
+
+Careful claim:
+
+> In the generated finite search space, the implemented Bridge Distortion Theorem produced no counterexamples, and the satisfaction layer measured where generated bridge cases preserved or distorted satisfaction.
