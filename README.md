@@ -493,3 +493,24 @@ docs/lean_morphism_exporter.md
 Careful claim:
 
 > Project ℵω now has a Python-to-Lean exporter that generates Lean-checkable finite satisfaction-preserving morphisms.
+
+### Phase 31D: Generated Lean Export Verification
+
+Project ℵω now includes a script that regenerates Python-to-Lean exports and checks them with Lean.
+
+Artifact:
+
+```text
+scripts/check_generated_lean_exports.sh
+docs/generated_lean_export_verification.md
+```
+
+Command:
+
+```bash
+./scripts/check_generated_lean_exports.sh
+```
+
+Careful claim:
+
+> Project ℵω now has reproducible Python-generated Lean finite-system and preservation-morphism exports verified by Lean.
