@@ -291,3 +291,13 @@ The public release package is summarized at:
 ```text
 docs/public_release_completion_report.md
 ```
+
+## PhD-Level Strengthening Track
+
+The next research-strengthening track begins with Mathlib integration feasibility:
+
+```text
+docs/mathlib_integration_feasibility.md
+```
+
+This document analyzes what would be required to upgrade the standalone quotient-category-like Lean structure into a real Mathlib-compatible category instance.
