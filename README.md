@@ -557,3 +557,34 @@ Read the Phase 14 docs:
 Careful claim:
 
 > In the generated finite search space, the implemented Bridge Distortion Theorem produced no counterexamples, and the satisfaction layer measured where generated bridge cases preserved or distorted satisfaction.
+
+## Phase 15: Counterexample Laboratory / Failure Taxonomy
+
+Project ℵω now includes a failure laboratory for generated finite semantic cases.
+
+This layer adds:
+
+- finite failure taxonomy
+- extraction of counterexample-like semantic failures
+- failure laboratory report generation
+- theorem boundary analysis
+
+Generate the failure laboratory report:
+
+python3 -m src.rigor.failure_report
+
+Run Phase 15 tests:
+
+python3 -m pytest tests/test_rigor_failure_taxonomy.py tests/test_rigor_failure_extractor.py tests/test_rigor_failure_report.py tests/test_rigor_theorem_boundary.py
+
+Read the Phase 15 docs:
+
+- `docs/failure_lab.md`
+- `docs/failure_taxonomy.md`
+- `docs/failure_extractor.md`
+- `docs/failure_lab_report.md`
+- `docs/theorem_boundary_analysis.md`
+
+Careful claim:
+
+> The finite search layer extracts, classifies, and reports generated semantic failure cases, while theorem-boundary analysis distinguishes verified preservation, vacuous preservation, hypothesis failure, structural failure, and semantic distortion.

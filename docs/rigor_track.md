@@ -174,3 +174,39 @@ The careful claim is:
 > In the generated finite search space, the implemented Bridge Distortion Theorem produced no counterexamples, and the satisfaction layer measured where generated bridge cases preserved or distorted satisfaction.
 
 This is a finite computational stress test, not a universal proof about all mathematics.
+
+## Phase 15: Counterexample Laboratory / Failure Taxonomy
+
+Phase 15 adds a failure laboratory to the rigor track.
+
+Implemented files:
+
+- `src/rigor/failure_taxonomy.py`
+- `src/rigor/failure_extractor.py`
+- `src/rigor/failure_report.py`
+- `src/rigor/theorem_boundary.py`
+- `tests/test_rigor_failure_taxonomy.py`
+- `tests/test_rigor_failure_extractor.py`
+- `tests/test_rigor_failure_report.py`
+- `tests/test_rigor_theorem_boundary.py`
+- `docs/failure_taxonomy.md`
+- `docs/failure_extractor.md`
+- `docs/failure_lab_report.md`
+- `docs/theorem_boundary_analysis.md`
+- `docs/failure_lab.md`
+
+Phase 15 extracts and classifies generated semantic failure cases from the finite search layer.
+
+It distinguishes:
+
+- verified preservation
+- vacuous preservation
+- hypothesis failure
+- structural failure
+- semantic distortion
+
+The careful claim is:
+
+> The finite search layer extracts, classifies, and reports generated semantic failure cases, while theorem-boundary analysis distinguishes verified preservation, vacuous preservation, hypothesis failure, structural failure, and semantic distortion.
+
+This remains finite, computational, and model-bound.
