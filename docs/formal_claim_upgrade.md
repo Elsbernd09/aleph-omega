@@ -121,3 +121,24 @@ Project Aleph-Omega contains a Lean-checked prototype of its central satisfactio
 This is stronger than a pure coding project.
 
 It is not yet a fully formalized research theory.
+
+## Phase 22 Claim Upgrade: Quotient Category Foundation
+
+Phase 22 adds a Lean-checked quotient-category foundation for satisfaction-preserving morphisms modulo extensional equivalence.
+
+Machine-checked prototype results now include:
+
+- morphism equivalence laws
+- identity laws up to morphism equivalence
+- associativity up to morphism equivalence
+- composition compatibility with equivalence
+- Setoid construction for preservation morphisms
+- quotient hom-types
+- equality of quotient classes for equivalent morphisms
+- quotient composition well-definedness
+- quotient identity laws
+- quotient associativity
+
+Strongest careful claim:
+
+> Project Aleph-Omega has a Lean-checked quotient-category foundation for satisfaction-preserving morphisms modulo extensional equivalence. This is not yet a complete Mathlib Category instance.
