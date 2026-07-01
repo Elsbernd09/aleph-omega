@@ -750,3 +750,24 @@ Run Lean checker:
 Careful claim:
 
 > Project ℵω contains a Lean-checked prototype of its central satisfaction-preservation core. This does not machine-verify the entire Python implementation.
+
+## Phase 22: Lean Category-Theoretic Strengthening
+
+Project ℵω now strengthens the Lean formalization with morphism equivalence and equivalence-compatible composition.
+
+Added concepts:
+
+- extensional morphism equivalence
+- reflexivity, symmetry, and transitivity of morphism equivalence
+- identity laws up to morphism equivalence
+- associativity up to morphism equivalence
+- composition compatibility with morphism equivalence
+- quotient-category construction plan
+
+Key Lean theorem:
+
+`compose_respects_morphism_equivalence`
+
+Careful claim:
+
+> Project ℵω has a Lean-checked foundation for a quotient category of satisfaction-preserving morphisms modulo extensional equivalence. It does not yet contain a complete Mathlib category instance.
