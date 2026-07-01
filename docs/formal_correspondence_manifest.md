@@ -130,3 +130,17 @@ The next serious step is to make this correspondence sharper by either:
 
 1. implementing Python-side morphism equivalence and quotient operations, or
 2. moving the finite Python structures into Lean as concrete finite examples.
+
+## Phase 24B Update: Python-Side Morphism Equivalence
+
+The Python implementation now includes a computational analogue of the Lean `MorphismEquivalent` definition.
+
+New artifacts:
+
+- `src/rigor/python_morphism_equivalence.py`
+- `tests/test_rigor_python_morphism_equivalence.py`
+- `docs/python_morphism_equivalence.md`
+
+Careful claim:
+
+> Project Aleph-Omega now has both a Lean definition of morphism equivalence and a Python-side checker for extensional equivalence of finite institution morphisms.
