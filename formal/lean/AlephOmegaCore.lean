@@ -467,3 +467,81 @@ theorem associativity_equivalent
         rfl
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 22B: Composition respects morphism equivalence.
+
+If two first-leg morphisms are equivalent and two second-leg morphisms are
+equivalent, then their composites are equivalent.
+
+This is a key compatibility condition for category-style reasoning up to
+extensional equivalence.
+-/
+
+/--
+Composition is compatible with morphism equivalence.
+-/
+theorem compose_respects_morphism_equivalence
+  {A B C : FormalSystem}
+  {F F' : PreservationMorphism A B}
+  {G G' : PreservationMorphism B C} :
+  MorphismEquivalent F F' ->
+  MorphismEquivalent G G' ->
+  MorphismEquivalent (composeMorphism F G) (composeMorphism F' G') := by
+    intro hF hG
+    constructor
+    · intro φ
+      calc
+        G.translate (F.translate φ) = G.translate (F'.translate φ) := by
+          rw [hF.1 φ]
+        _ = G'.translate (F'.translate φ) := by
+          exact hG.1 (F'.translate φ)
+    · intro m
+      calc
+        G.mapModel (F.mapModel m) = G.mapModel (F'.mapModel m) := by
+          rw [hF.2 m]
+        _ = G'.mapModel (F'.mapModel m) := by
+          exact hG.2 (F'.mapModel m)
+
+/--
+If two morphisms are equivalent, then satisfaction transported by one can be
+viewed as satisfaction transported by the other.
+-/
+theorem equivalent_morphisms_transport_satisfaction
+  {A B : FormalSystem}
+  {F G : PreservationMorphism A B} :
+  MorphismEquivalent F G ->
+  ∀ (m : A.Model) (φ : A.Sentence),
+    A.Sat m φ ->
+    B.Sat (G.mapModel m) (G.translate φ) := by
+      intro hEq m φ hSat
+      rw [← hEq.2 m, ← hEq.1 φ]
+      exact F.preserves m φ hSat
+
+/--
+Equivalent morphisms have equivalent composites after composition on the left.
+-/
+theorem left_composition_respects_equivalence
+  {A B C : FormalSystem}
+  {F F' : PreservationMorphism A B}
+  (G : PreservationMorphism B C) :
+  MorphismEquivalent F F' ->
+  MorphismEquivalent (composeMorphism F G) (composeMorphism F' G) := by
+    intro hF
+    exact compose_respects_morphism_equivalence hF (morphism_equiv_refl G)
+
+/--
+Equivalent morphisms have equivalent composites after composition on the right.
+-/
+theorem right_composition_respects_equivalence
+  {A B C : FormalSystem}
+  (F : PreservationMorphism A B)
+  {G G' : PreservationMorphism B C} :
+  MorphismEquivalent G G' ->
+  MorphismEquivalent (composeMorphism F G) (composeMorphism F G') := by
+    intro hG
+    exact compose_respects_morphism_equivalence (morphism_equiv_refl F) hG
+
+end AlephOmega
