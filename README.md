@@ -377,3 +377,17 @@ docs/mathlib_quotient_category_blueprint.md
 Careful claim:
 
 > Project ℵω now has a detailed technical plan for a real Mathlib quotient category whose morphisms are equivalence classes of satisfaction-preserving morphisms. The quotient category instance itself is the next target.
+
+### Phase 30B: Mathlib Quotient Category Prototype
+
+Project ℵω now includes an experimental Mathlib quotient category prototype.
+
+Artifact:
+
+```text
+formal/aleph_omega_mathlib/AlephOmegaMathlib/QuotientFormalSystemCategory.lean
+```
+
+Careful claim:
+
+> Project ℵω now contains an experimental Mathlib quotient category prototype whose morphisms are quotient classes of satisfaction-preserving morphisms. This should still be reviewed carefully before being treated as final.
