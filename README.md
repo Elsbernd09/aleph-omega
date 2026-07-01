@@ -514,3 +514,19 @@ Command:
 Careful claim:
 
 > Project ℵω now has reproducible Python-generated Lean finite-system and preservation-morphism exports verified by Lean.
+
+### Phase 31E: Generated Lean Exports Integrated into Formal Stack
+
+Project ℵω now verifies Python-generated Lean exports inside the main formal-stack gate.
+
+Artifacts:
+
+```text
+scripts/check_formal_stack.sh
+scripts/check_generated_lean_exports.sh
+tests/test_rigor_formal_stack_generated_exports.py
+```
+
+Careful claim:
+
+> Project ℵω now includes reproducible Python-generated Lean exports as part of its official formal verification pipeline.

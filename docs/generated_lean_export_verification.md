@@ -50,3 +50,21 @@ Project Aleph-Omega now has a script that regenerates Python-to-Lean finite expo
 This verifies the current generated examples only.
 
 Future phases should integrate generated Lean export verification into the full formal-stack gate.
+
+## Formal Stack Integration
+
+Phase 31E integrates generated Lean export verification into the main formal-stack gate.
+
+The main verification command now includes:
+
+```bash
+./scripts/check_generated_lean_exports.sh
+```
+
+This means the project checks Python-generated Lean finite systems and preservation morphisms as part of the official formal verification pipeline.
+
+Primary command:
+
+```bash
+./scripts/check_formal_stack.sh
+```

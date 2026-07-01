@@ -23,9 +23,3 @@ python3 -m pytest
 echo ""
 
 echo "Aleph-Omega formal stack verified successfully."
-
-echo ""
-echo "== Checking generated Python-to-Lean exports =="
-./scripts/check_generated_lean_exports.sh
-
-echo "Formal stack verified successfully."
