@@ -74,3 +74,12 @@ A standalone figure appendix is available at:
 - `docs/manuscript_figures.md`
 
 The figure appendix includes architecture diagrams, theorem-flow diagrams, concrete Lean chain diagrams, quotient-category integration diagrams, and claim-boundary diagrams.
+
+## Appendix: Front Matter and Submission Package
+
+A standalone front-matter and reviewer-summary package is available at:
+
+
+- `docs/manuscript_front_matter.md`
+
+This document includes the short abstract, extended abstract, keywords, contribution list, reviewer summary, and submission framing note.

@@ -894,3 +894,20 @@ New artifact:
 Purpose:
 
 > The figure appendix gives reviewers a clear visual map of the Python layer, Lean core, correspondence layer, concrete finite examples, quotient-category integration, and claim boundaries.
+
+### Phase 26D: Manuscript Front Matter
+
+Project ℵω now includes a polished manuscript front-matter package.
+
+New artifact:
+
+- `docs/manuscript_front_matter.md`
+
+Includes:
+
+- short abstract
+- extended abstract
+- keywords
+- contribution list
+- reviewer summary
+- submission note
