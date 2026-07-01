@@ -63,3 +63,30 @@ The proof is located at:
 
 ```text
 docs/bridge_distortion_proof.md
+
+## Phase 11: Satisfaction-Based Semantics
+
+Phase 11 strengthens the rigor track by moving beyond semantic feature labels into finite truth-value semantics and satisfaction-based preservation.
+
+Implemented files:
+
+- `src/rigor/semantics.py`
+- `src/rigor/interpretation.py`
+- `src/rigor/satisfaction.py`
+- `src/rigor/preservation.py`
+- `src/rigor/preservation_theorem.py`
+- `src/rigor/examples.py`
+- `tests/test_rigor_semantics.py`
+- `tests/test_rigor_interpretation.py`
+- `tests/test_rigor_satisfaction.py`
+- `tests/test_rigor_preservation.py`
+- `tests/test_rigor_preservation_theorem.py`
+- `tests/test_rigor_examples.py`
+- `docs/satisfaction_preservation_theorem.md`
+- `docs/rigor_examples.md`
+
+The main new theorem is the Finite Satisfaction Preservation Theorem:
+
+> A bridge preserves satisfaction exactly when every satisfied source statement has a defined translated target statement that is also satisfied.
+
+This gives the project a stronger semantic core. Distortion is no longer only feature loss; it can also be failure to preserve satisfaction.

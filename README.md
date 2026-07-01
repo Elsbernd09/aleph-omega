@@ -436,3 +436,36 @@ python3 -m pytest tests/test_rigor_finite_universe.py tests/test_rigor_bridge.py
 ```
 
 The theorem currently has a finite mathematical statement, executable theorem checks, unit tests, and a hand-written proof. It is not a claim of solving mathematical foundations; it is a precise finite result about semantic distortion under translation between toy logical universes.
+
+## Phase 11: Satisfaction-Based Mathematical Semantics
+
+Project ℵω now includes a stronger satisfaction-based rigor layer.
+
+This layer adds:
+
+- finite truth-value spaces
+- semantic operations
+- statement interpretations
+- validity of interpretations
+- designated truth values
+- finite satisfaction relation
+- satisfaction-based preservation
+- satisfaction preservation theorem
+- examples and counterexamples
+
+Main theorem:
+
+> A bridge preserves satisfaction exactly when every satisfied source statement has a defined translated target statement that is also satisfied.
+
+Run Phase 11 tests:
+
+```bash
+python3 -m pytest tests/test_rigor_semantics.py tests/test_rigor_interpretation.py tests/test_rigor_satisfaction.py tests/test_rigor_preservation.py tests/test_rigor_preservation_theorem.py tests/test_rigor_examples.py
+```
+
+Read the proof and examples:
+
+- `docs/satisfaction_preservation_theorem.md`
+- `docs/rigor_examples.md`
+
+This phase makes the project more mathematically serious by introducing satisfaction, designated truth values, and preservation failure under translation.
