@@ -40,3 +40,69 @@ theorem smoke_associativity {A B C D : SmokeObject}
     rfl
 
 end AlephOmegaMathlib
+
+namespace AlephOmegaMathlib
+
+open CategoryTheory
+
+/-
+Phase 29C: First real Mathlib Category instance.
+
+This is a smoke-test category instance for SmokeObject.
+
+Objects:
+- SmokeObject
+
+Morphisms:
+- functions between carriers
+
+Identity:
+- identity function
+
+Composition:
+- function composition
+
+This confirms that the experimental Mathlib project can define an actual
+Mathlib Category instance.
+-/
+
+instance smokeCategory : Category SmokeObject where
+  Hom A B := SmokeHom A B
+  id A := SmokeId A
+  comp f g := SmokeComp f g
+  id_comp := by
+    intro X Y f
+    rfl
+  comp_id := by
+    intro X Y f
+    rfl
+  assoc := by
+    intro W X Y Z f g h
+    rfl
+
+theorem smoke_category_id_is_smoke_id (A : SmokeObject) :
+  CategoryStruct.id A = SmokeId A := by
+    rfl
+
+theorem smoke_category_comp_is_smoke_comp
+  {A B C : SmokeObject} (f : A ⟶ B) (g : B ⟶ C) :
+  f ≫ g = SmokeComp f g := by
+    rfl
+
+theorem smoke_category_left_identity
+  {A B : SmokeObject} (f : A ⟶ B) :
+  𝟙 A ≫ f = f := by
+    simp
+
+theorem smoke_category_right_identity
+  {A B : SmokeObject} (f : A ⟶ B) :
+  f ≫ 𝟙 B = f := by
+    simp
+
+theorem smoke_category_assoc
+  {A B C D : SmokeObject}
+  (f : A ⟶ B) (g : B ⟶ C) (h : C ⟶ D) :
+  (f ≫ g) ≫ h = f ≫ (g ≫ h) := by
+    simp
+
+end AlephOmegaMathlib

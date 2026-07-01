@@ -321,3 +321,17 @@ Checker:
 Careful claim:
 
 > Project ℵω now has a separate experimental Mathlib scaffold. This is not yet a Mathlib Category instance for the main Aleph-Omega formalization.
+
+### Phase 29C: Mathlib Category Smoke Instance
+
+Project ℵω now includes an experimental Mathlib project with a real smoke-test `Category` instance.
+
+Artifact:
+
+```text
+formal/aleph_omega_mathlib/AlephOmegaMathlib/CategorySmokeTest.lean
+```
+
+Careful claim:
+
+> Project ℵω can now define and build a real Mathlib `Category` instance in its experimental Mathlib scaffold. This is not yet the Aleph-Omega quotient category instance.
