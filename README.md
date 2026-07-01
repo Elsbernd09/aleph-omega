@@ -410,3 +410,29 @@ reports/project_aleph_omega_report.md
 The reporting layer converts Project ℵω outputs into readable research artifacts and Markdown reports. It summarizes system metrics, review requirements, limitations, and recommended next steps.
 
 These reports summarize a computational research framework. They are not mathematical proofs or claims of solved open problems.
+
+## Mathematical Rigor Track
+
+Project ℵω now includes a theorem-driven rigor track.
+
+The first theorem target is the **Finite Bridge Distortion Theorem**:
+
+> If a total bridge translates statements from a finite source universe into a finite target universe, and the source contains a statement requiring a semantic feature absent from the target, then at least one translation is semantically distorted.
+
+Implemented rigor-track files:
+
+- `src/rigor/finite_universe.py`
+- `src/rigor/bridge.py`
+- `src/rigor/distortion.py`
+- `src/rigor/theorem.py`
+- `docs/theorem_target.md`
+- `docs/bridge_distortion_proof.md`
+- `docs/rigor_track.md`
+
+Run rigor-track tests:
+
+```bash
+python3 -m pytest tests/test_rigor_finite_universe.py tests/test_rigor_bridge.py tests/test_rigor_distortion.py tests/test_rigor_theorem.py
+```
+
+The theorem currently has a finite mathematical statement, executable theorem checks, unit tests, and a hand-written proof. It is not a claim of solving mathematical foundations; it is a precise finite result about semantic distortion under translation between toy logical universes.
