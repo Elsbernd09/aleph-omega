@@ -268,11 +268,16 @@ def collapse_bridge(
     features are exactly the features supported by the target universe.
     """
 
-    collapsed_target_statement = FiniteStatement.from_features(
-        name=target_statement_name,
-        features=target.supported_features,
-        informal_reading="A collapsed target statement used by a bridge.",
-    )
+    target_statements = sorted(target.statements, key=lambda item: item.name)
+
+    if target_statements:
+        collapsed_target_statement = target_statements[0]
+    else:
+        collapsed_target_statement = FiniteStatement.from_features(
+            name=target_statement_name,
+            features=target.supported_features,
+            informal_reading="A collapsed target statement used by a bridge.",
+        )
 
     mapping = {
         statement: collapsed_target_statement

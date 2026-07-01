@@ -154,9 +154,11 @@ def test_target_not_satisfied_distorts_satisfied_source():
     assert result.status == PreservationResultStatus.TARGET_NOT_SATISFIED
     assert result.is_distorted()
     assert report.distortion_count() == 1
+    assert report.preserved_count() == 0
+    assert not report.all_satisfied_sources_preserved()
 
 
-def test_collapse_bridge_can_preserve_satisfaction_if_target_is_satisfied():
+def test_collapse_bridge_preserves_satisfaction_if_target_is_satisfied():
     source = classical_finite_universe()
     target = classical_finite_universe()
     truth_space = classical_truth_space()
@@ -185,7 +187,9 @@ def test_collapse_bridge_can_preserve_satisfaction_if_target_is_satisfied():
         target_interpretation=target_interpretation,
     )
 
-    assert report.distortion_count() == 1
+    assert report.distortion_count() == 0
+    assert report.preserved_count() == 1
+    assert report.all_satisfied_sources_preserved()
 
 
 def test_preservation_report_describe():
