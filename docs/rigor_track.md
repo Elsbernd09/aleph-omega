@@ -210,3 +210,38 @@ The careful claim is:
 > The finite search layer extracts, classifies, and reports generated semantic failure cases, while theorem-boundary analysis distinguishes verified preservation, vacuous preservation, hypothesis failure, structural failure, and semantic distortion.
 
 This remains finite, computational, and model-bound.
+
+## Phase 16: Formal Verification Interface / Machine-Checkable Claims
+
+Phase 16 adds a formal verification interface to the rigor track.
+
+Implemented files:
+
+- `src/rigor/claim_registry.py`
+- `src/rigor/theorem_audit.py`
+- `src/rigor/proof_obligations.py`
+- `src/rigor/verification_report.py`
+- `tests/test_rigor_claim_registry.py`
+- `tests/test_rigor_theorem_audit.py`
+- `tests/test_rigor_proof_obligations.py`
+- `tests/test_rigor_verification_report.py`
+- `docs/formal_claim_registry.md`
+- `docs/theorem_audit.md`
+- `docs/proof_obligations.md`
+- `docs/verification_report.md`
+- `docs/formal_verification_interface.md`
+
+Phase 16 separates finite verified claims from conjectural generalizations.
+
+It adds:
+
+- formal claim registry
+- theorem audit records
+- proof obligation tracker
+- verification report generation
+
+The careful claim is:
+
+> The project includes a formal verification interface that records finite claims, audits theorem-like statements, tracks proof obligations, and separates verified finite results from conjectural generalizations.
+
+This is not full machine proof. The strongest claims remain finite, computational, and model-bound.

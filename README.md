@@ -588,3 +588,34 @@ Read the Phase 15 docs:
 Careful claim:
 
 > The finite search layer extracts, classifies, and reports generated semantic failure cases, while theorem-boundary analysis distinguishes verified preservation, vacuous preservation, hypothesis failure, structural failure, and semantic distortion.
+
+## Phase 16: Formal Verification Interface / Machine-Checkable Claims
+
+Project ℵω now includes a formal verification interface.
+
+This layer adds:
+
+- formal claim registry
+- theorem audit records
+- proof obligation tracker
+- verification report generation
+
+Generate the verification report:
+
+python3 -m src.rigor.verification_report
+
+Run Phase 16 tests:
+
+python3 -m pytest tests/test_rigor_claim_registry.py tests/test_rigor_theorem_audit.py tests/test_rigor_proof_obligations.py tests/test_rigor_verification_report.py
+
+Read the Phase 16 docs:
+
+- `docs/formal_verification_interface.md`
+- `docs/formal_claim_registry.md`
+- `docs/theorem_audit.md`
+- `docs/proof_obligations.md`
+- `docs/verification_report.md`
+
+Careful claim:
+
+> Project ℵω records finite claims, audits theorem-like statements, tracks proof obligations, and separates verified finite results from conjectural generalizations.
