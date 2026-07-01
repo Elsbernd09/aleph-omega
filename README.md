@@ -477,3 +477,19 @@ docs/lean_finite_system_exporter.md
 Careful claim:
 
 > Project ℵω now has a Python-to-Lean exporter that generates a finite formal system with Lean-checkable satisfaction facts.
+
+### Phase 31C: Python-to-Lean Preservation Morphism Exporter
+
+Project ℵω now includes a Python-to-Lean exporter for finite satisfaction-preserving morphisms.
+
+Artifacts:
+
+```text
+src/rigor/lean_morphism_exporter.py
+formal/generated/ExportedTinyMorphism.lean
+docs/lean_morphism_exporter.md
+```
+
+Careful claim:
+
+> Project ℵω now has a Python-to-Lean exporter that generates Lean-checkable finite satisfaction-preserving morphisms.
