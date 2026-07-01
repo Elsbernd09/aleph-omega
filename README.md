@@ -866,3 +866,19 @@ Strongest careful claim:
 Limitation:
 
 > These are small finite examples, not universal results about all institutions or all logics.
+
+## Phase 26: Research Manuscript Layer
+
+Project ℵω now includes a paper-style academic manuscript draft.
+
+New manuscript:
+
+- `docs/project_aleph_omega_manuscript.md`
+
+Purpose:
+
+> The manuscript explains the finite computational framework, Lean formal core, quotient-category structure, concrete finite Lean examples, and Lean/Python correspondence layer in a single research-style document.
+
+Careful claim:
+
+> Project ℵω is a finite institution-inspired, Lean-supported research framework for studying satisfaction preservation under translation. It is not yet a general theory of institutions or a field-changing theorem.
