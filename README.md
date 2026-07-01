@@ -249,3 +249,13 @@ The most accurate public description is:
 ## License
 
 Add a license before public release if one is not already present.
+
+## Public Release Index
+
+A reviewer-facing map of the documentation package is available at:
+
+```text
+docs/public_release_index.md
+```
+
+This index tells readers where to start, which documents contain the exact claims, and how to verify the formal stack.
