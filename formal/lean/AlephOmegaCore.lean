@@ -545,3 +545,87 @@ theorem right_composition_respects_equivalence
     exact compose_respects_morphism_equivalence (morphism_equiv_refl F) hG
 
 end AlephOmega
+
+namespace AlephOmega
+
+/-
+Phase 22D: Setoid and quotient hom-type prototype.
+
+We now package morphism equivalence as a Setoid.
+
+This is the first Lean-level step toward quotienting preservation morphisms by
+extensional equivalence.
+-/
+
+/--
+The Setoid of preservation morphisms under extensional equivalence.
+-/
+instance morphismSetoid
+  {A B : FormalSystem} :
+  Setoid (PreservationMorphism A B) where
+    r := MorphismEquivalent
+    iseqv := by
+      constructor
+      · intro F
+        exact morphism_equiv_refl F
+      · intro F G h
+        exact morphism_equiv_symm h
+      · intro F G H hFG hGH
+        exact morphism_equiv_trans hFG hGH
+
+/--
+Quotient hom-type.
+
+A quotient morphism from A to B is an equivalence class of
+satisfaction-preserving morphisms from A to B.
+-/
+def QuotientMorphism
+  (A B : FormalSystem) : Type :=
+  Quotient (@morphismSetoid A B)
+
+/--
+The quotient identity arrow.
+-/
+def quotientIdentity
+  (A : FormalSystem) : QuotientMorphism A A :=
+  Quotient.mk morphismSetoid (identityMorphism A)
+
+/--
+Send a preservation morphism to its quotient class.
+-/
+def quotientOf
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B) : QuotientMorphism A B :=
+  Quotient.mk morphismSetoid F
+
+/--
+Equivalent morphisms determine the same quotient morphism.
+
+This is the first quotient correctness theorem.
+-/
+theorem equivalent_morphisms_same_quotient
+  {A B : FormalSystem}
+  {F G : PreservationMorphism A B} :
+  MorphismEquivalent F G ->
+  quotientOf F = quotientOf G := by
+    intro h
+    exact Quotient.sound h
+
+/--
+Every morphism has the same quotient class as itself.
+-/
+theorem quotient_refl
+  {A B : FormalSystem}
+  (F : PreservationMorphism A B) :
+  quotientOf F = quotientOf F := by
+    rfl
+
+/--
+Identity quotient is the quotient of the identity morphism.
+-/
+theorem quotient_identity_def
+  (A : FormalSystem) :
+  quotientIdentity A = quotientOf (identityMorphism A) := by
+    rfl
+
+end AlephOmega
