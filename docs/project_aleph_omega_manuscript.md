@@ -65,3 +65,12 @@ Future work should proceed in three directions. First, the project can be conver
 ## 15. Careful Final Claim
 
 Project Aleph-Omega contains a finite computational framework and a Lean-checked abstract quotient-category core for satisfaction-preserving translations between formal systems. It includes concrete finite Lean examples and a documented Python correspondence layer. This is a serious formal-methods and mathematical-computation artifact. It is not yet a general theory of institutions, a full Mathlib category, or a field-changing theorem.
+
+## Appendix: Manuscript Figures
+
+A standalone figure appendix is available at:
+
+
+- `docs/manuscript_figures.md`
+
+The figure appendix includes architecture diagrams, theorem-flow diagrams, concrete Lean chain diagrams, quotient-category integration diagrams, and claim-boundary diagrams.

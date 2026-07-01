@@ -882,3 +882,15 @@ Purpose:
 Careful claim:
 
 > Project ℵω is a finite institution-inspired, Lean-supported research framework for studying satisfaction preservation under translation. It is not yet a general theory of institutions or a field-changing theorem.
+
+### Phase 26C: Manuscript Figures
+
+Project ℵω now includes manuscript-ready architecture and theorem-flow figures.
+
+New artifact:
+
+- `docs/manuscript_figures.md`
+
+Purpose:
+
+> The figure appendix gives reviewers a clear visual map of the Python layer, Lean core, correspondence layer, concrete finite examples, quotient-category integration, and claim boundaries.
