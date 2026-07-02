@@ -865,3 +865,17 @@ docs/diamond_diagram_mathlib_exporter.md
 Careful claim:
 
 > Project ℵω now exports a generated finite diamond diagram into Mathlib and proves that its two source-to-target paths are equal as quotient morphisms by pointwise translation and model-map equivalence, using PreservationEquivalent and Quotient.sound rather than bare rfl.
+
+### Phase 35E: Non-rfl Diamond Theorem Completion Report
+
+Project ℵω now includes a completion report for the generated theorem-backed diamond diagram.
+
+Artifact:
+
+```text
+docs/nontrivial_diamond_theorem_completion_report.md
+```
+
+Careful claim:
+
+> Project ℵω now contains a generated theorem-backed diamond diagram: two generated source-to-target paths are proved equal as quotient morphisms by pointwise translation equality, pointwise model-map equality, PreservationEquivalent, and Quotient.sound, rather than by bare definitional equality.
