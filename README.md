@@ -611,3 +611,19 @@ Command:
 Careful claim:
 
 > Project ℵω now has a reproducible script that regenerates Python-produced Mathlib finite-system and preservation-morphism exports and verifies them through the experimental Mathlib Lake build.
+
+### Phase 32E: Generated Mathlib Exports Integrated into Formal Stack
+
+Project ℵω now verifies Python-generated Mathlib exports inside the main formal-stack gate.
+
+Artifacts:
+
+```text
+scripts/check_formal_stack.sh
+scripts/check_generated_mathlib_exports.sh
+tests/test_rigor_formal_stack_generated_mathlib_exports.py
+```
+
+Careful claim:
+
+> Project ℵω now includes reproducible Python-generated Mathlib finite-system and preservation-morphism exports as part of its official formal verification pipeline.

@@ -48,3 +48,21 @@ Project Aleph-Omega now has a reproducible script that regenerates Python-produc
 This verifies the current generated Mathlib examples only.
 
 Future phases should integrate this script into the full formal-stack gate.
+
+## Formal Stack Integration
+
+Phase 32E integrates generated Mathlib export verification into the main formal-stack gate.
+
+The main verification command now includes:
+
+```bash
+./scripts/check_generated_mathlib_exports.sh
+```
+
+This means the project checks Python-generated Mathlib finite systems and preservation morphisms as part of the official formal verification pipeline.
+
+Primary command:
+
+```bash
+./scripts/check_formal_stack.sh
+```

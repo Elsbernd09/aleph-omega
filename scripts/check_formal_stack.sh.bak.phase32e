@@ -28,9 +28,4 @@ echo ""
 echo "== Checking generated Python-to-Lean exports =="
 ./scripts/check_generated_lean_exports.sh
 
-
-echo ""
-echo "== Checking generated Mathlib exports =="
-./scripts/check_generated_mathlib_exports.sh
-
 echo "Formal stack verified successfully."
