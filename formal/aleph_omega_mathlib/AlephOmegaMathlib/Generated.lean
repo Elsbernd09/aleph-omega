@@ -3,3 +3,4 @@ import AlephOmegaMathlib.Generated.ExportedTinyMathlibMorphism
 import AlephOmegaMathlib.Generated.ExportedTinyMathlibQuotient
 import AlephOmegaMathlib.Generated.ExportedTinyMathlibQuotientComposition
 import AlephOmegaMathlib.Generated.SemanticLab
+import AlephOmegaMathlib.Generated.DiamondDiagram

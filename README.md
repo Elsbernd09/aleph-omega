@@ -849,3 +849,19 @@ docs/generated_diamond_diagram_model.md
 Careful claim:
 
 > Project ℵω now has a Python data model for a generated finite diamond diagram whose two distinct paths agree pointwise on models and sentence translations.
+
+### Phase 35D: Generated Diamond Diagram Mathlib Exporter
+
+Project ℵω now exports a generated finite diamond diagram into Mathlib with a theorem-backed quotient path equivalence proof.
+
+Artifacts:
+
+```text
+src/rigor/diamond_diagram_mathlib_exporter.py
+formal/aleph_omega_mathlib/AlephOmegaMathlib/Generated/DiamondDiagram.lean
+docs/diamond_diagram_mathlib_exporter.md
+```
+
+Careful claim:
+
+> Project ℵω now exports a generated finite diamond diagram into Mathlib and proves that its two source-to-target paths are equal as quotient morphisms by pointwise translation and model-map equivalence, using PreservationEquivalent and Quotient.sound rather than bare rfl.
