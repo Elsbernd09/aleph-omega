@@ -1,2 +1,3 @@
 import AlephOmegaMathlib.Generated.ExportedTinyMathlibSystem
 import AlephOmegaMathlib.Generated.ExportedTinyMathlibMorphism
+import AlephOmegaMathlib.Generated.ExportedTinyMathlibQuotient
