@@ -590,3 +590,24 @@ docs/mathlib_morphism_exporter.md
 Careful claim:
 
 > Project ℵω now has a Python exporter that generates finite PreservationMorphism artifacts directly inside the experimental Mathlib category-theory track.
+
+### Phase 32D: Generated Mathlib Export Verification
+
+Project ℵω now includes a script that regenerates Python-produced Mathlib-track exports and verifies them through the experimental Mathlib Lake build.
+
+Artifacts:
+
+```text
+scripts/check_generated_mathlib_exports.sh
+docs/generated_mathlib_export_verification.md
+```
+
+Command:
+
+```bash
+./scripts/check_generated_mathlib_exports.sh
+```
+
+Careful claim:
+
+> Project ℵω now has a reproducible script that regenerates Python-produced Mathlib finite-system and preservation-morphism exports and verifies them through the experimental Mathlib Lake build.
