@@ -834,3 +834,18 @@ docs/nontrivial_quotient_path_equivalence_blueprint.md
 Careful claim:
 
 > Project ℵω now has a precise theorem plan for proving nontrivial quotient path equivalence by pointwise translation and model-map equality, rather than by bare definitional equality.
+
+### Phase 35C: Generated Diamond Diagram Data Model
+
+Project ℵω now includes a Python data model for a generated finite diamond diagram.
+
+Artifact:
+
+```text
+src/rigor/generated_diamond_diagram_model.py
+docs/generated_diamond_diagram_model.md
+```
+
+Careful claim:
+
+> Project ℵω now has a Python data model for a generated finite diamond diagram whose two distinct paths agree pointwise on models and sentence translations.
