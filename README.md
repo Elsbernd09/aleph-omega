@@ -820,3 +820,17 @@ docs/semantic_lab_expansion_blueprint.md
 Careful claim:
 
 > Project ℵω now has a precise plan for expanding its generated finite semantic lab beyond chains into multiple named finite semantic diagram families.
+
+### Phase 35B: Nontrivial Quotient Path Equivalence Blueprint
+
+Project ℵω now begins the theorem-strengthening track for nontrivial quotient path equivalence.
+
+Artifact:
+
+```text
+docs/nontrivial_quotient_path_equivalence_blueprint.md
+```
+
+Careful claim:
+
+> Project ℵω now has a precise theorem plan for proving nontrivial quotient path equivalence by pointwise translation and model-map equality, rather than by bare definitional equality.
