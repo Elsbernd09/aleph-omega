@@ -574,3 +574,19 @@ docs/mathlib_finite_system_exporter.md
 Careful claim:
 
 > Project ℵω now has a Python exporter that generates finite FormalSystem artifacts directly inside the experimental Mathlib category-theory track.
+
+### Phase 32C: Mathlib-Targeted Preservation Morphism Exporter
+
+Project ℵω now has a Python exporter that generates finite PreservationMorphism artifacts directly inside the experimental Mathlib category-theory track.
+
+Artifacts:
+
+```text
+src/rigor/mathlib_morphism_exporter.py
+formal/aleph_omega_mathlib/AlephOmegaMathlib/Generated/ExportedTinyMathlibMorphism.lean
+docs/mathlib_morphism_exporter.md
+```
+
+Careful claim:
+
+> Project ℵω now has a Python exporter that generates finite PreservationMorphism artifacts directly inside the experimental Mathlib category-theory track.
