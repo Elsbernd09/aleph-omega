@@ -707,3 +707,17 @@ docs/generated_quotient_export_completion_report.md
 Careful claim:
 
 > Project ℵω now has a Python-generated Mathlib quotient export path that produces quotient-category wrapper artifacts and a finite quotient-category composition theorem, then verifies them through the generated Mathlib checker and formal-stack gate.
+
+### Phase 33E: Generated Lean Artifact Index
+
+Project ℵω now includes a reviewer-facing index of generated Lean and generated Mathlib artifacts.
+
+Artifact:
+
+```text
+docs/generated_lean_artifact_index.md
+```
+
+Careful claim:
+
+> Project ℵω now has a documented index of its generated Lean and generated Mathlib artifacts, including standalone finite systems, Mathlib preservation morphisms, quotient wrappers, quotient composition theorems, and verification scripts.
