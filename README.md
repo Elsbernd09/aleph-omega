@@ -749,3 +749,18 @@ docs/generated_semantic_lab_blueprint.md
 Careful claim:
 
 > Project ℵω now has a precise plan for scaling generated Mathlib quotient-category artifacts into a small finite semantic laboratory.
+
+### Phase 34B: Generated Semantic Lab Data Model
+
+Project ℵω now includes a Python data model for a generated finite semantic lab.
+
+Artifact:
+
+```text
+src/rigor/generated_semantic_lab_model.py
+docs/generated_semantic_lab_model.md
+```
+
+Careful claim:
+
+> Project ℵω now has a Python data model for a generated finite semantic lab containing multiple finite systems, preservation morphisms, and composable chains.
