@@ -558,3 +558,19 @@ docs/mathlib_export_integration_blueprint.md
 Careful claim:
 
 > Project ℵω now has a precise plan for moving Python-generated Lean artifacts into its experimental Mathlib category-theory track.
+
+### Phase 32B: Mathlib-Targeted Finite System Exporter
+
+Project ℵω now has a Python exporter that generates finite FormalSystem artifacts directly inside the experimental Mathlib category-theory track.
+
+Artifacts:
+
+```text
+src/rigor/mathlib_finite_system_exporter.py
+formal/aleph_omega_mathlib/AlephOmegaMathlib/Generated/ExportedTinyMathlibSystem.lean
+docs/mathlib_finite_system_exporter.md
+```
+
+Careful claim:
+
+> Project ℵω now has a Python exporter that generates finite FormalSystem artifacts directly inside the experimental Mathlib category-theory track.
