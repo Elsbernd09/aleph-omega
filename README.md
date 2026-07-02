@@ -806,3 +806,17 @@ docs/generated_semantic_lab_final_report.md
 Careful claim:
 
 > Project ℵω now contains a generated finite semantic lab: Python defines multiple finite systems, preservation morphisms, and composable chains, then exports them into the experimental Mathlib quotient-category track with quotient wrappers and quotient-category composition theorems.
+
+### Phase 35A: Semantic Lab Expansion Blueprint
+
+Project ℵω now begins the semantic lab expansion track.
+
+Artifact:
+
+```text
+docs/semantic_lab_expansion_blueprint.md
+```
+
+Careful claim:
+
+> Project ℵω now has a precise plan for expanding its generated finite semantic lab beyond chains into multiple named finite semantic diagram families.
